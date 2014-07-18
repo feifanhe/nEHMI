@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicAttributes", "BasicAttributes\BasicAttributes.csproj", "{E5DDBF0E-5BAE-49A6-8D41-4DF4600920B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockComponents", "StockComponents\StockComponents.csproj", "{0391361C-986D-4818-8157-00ED0C0317E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5DDBF0E-5BAE-49A6-8D41-4DF4600920B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5DDBF0E-5BAE-49A6-8D41-4DF4600920B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5DDBF0E-5BAE-49A6-8D41-4DF4600920B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5DDBF0E-5BAE-49A6-8D41-4DF4600920B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0391361C-986D-4818-8157-00ED0C0317E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0391361C-986D-4818-8157-00ED0C0317E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0391361C-986D-4818-8157-00ED0C0317E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0391361C-986D-4818-8157-00ED0C0317E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
