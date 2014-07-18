@@ -7,9 +7,10 @@ namespace BasicAttributes
 	abstract class Image
 	{
 		private string _Source;
-		private int _TransparentBackground;
+		private bool _TransparentBackground;
+		private Justification _Alignment;
 
-		protected internal string Source {
+		public string Source {
 			get {
 				return _Source;
 			}
@@ -18,19 +19,21 @@ namespace BasicAttributes
 			}
 		}
 
-		protected internal int Justification {
+		public bool TransparentBackground {
 			get {
-				throw new System.NotImplementedException();
+				return _TransparentBackground;
 			}
 			set {
+				this._TransparentBackground = value;
 			}
 		}
 
-		protected internal bool TransparentBackground {
+		public Justification Alignment {
 			get {
-				throw new System.NotImplementedException();
+				return _Alignment;
 			}
 			set {
+				this._Alignment = value;
 			}
 		}
 	}

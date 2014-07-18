@@ -4,11 +4,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0391361C-986D-4818-8157-00ED0C0317E2}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{DA2758D7-2222-4EB3-976B-DEAD07C1113C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StockComponents</RootNamespace>
-    <AssemblyName>StockComponents</AssemblyName>
+    <RootNamespace>Testing</RootNamespace>
+    <AssemblyName>Testing</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,19 +30,20 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Button.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BasicAttributes\BasicAttributes.csproj">
       <Project>{E5DDBF0E-5BAE-49A6-8D41-4DF4600920B0}</Project>
       <Name>BasicAttributes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StockComponents\StockComponents.csproj">
+      <Project>{0391361C-986D-4818-8157-00ED0C0317E2}</Project>
+      <Name>StockComponents</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
