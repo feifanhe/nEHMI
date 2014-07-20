@@ -2,9 +2,30 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
+using System.ComponentModel;
 
 namespace BasicAttributes
 {
+	public interface IText
+	{
+		int FontSize {
+			get;
+			set;
+		}
+		Color TextColor {
+			get;
+			set;
+		}
+		bool Localizable {
+			get;
+			set;
+		}
+		Justification Alignment {
+			get;
+			set;
+		}
+	}
+	
 	public class Text
 	{
 		private int _FontSize;
@@ -12,9 +33,9 @@ namespace BasicAttributes
 		private bool _Localizable;
 		private Justification _Alignment;
 
-		public Text( ) {
-		}
-
+		[Category( "Text" )]
+		[Description( "Set the font size of the text displayed." )]
+		[DefaultValue(12)]
 		public int FontSize {
 			get {
 				return _FontSize;
@@ -24,6 +45,8 @@ namespace BasicAttributes
 			}
 		}
 
+		[Category( "Text" )]
+		[Description( "Set the color of the text displayed." )]
 		public Color TextColor {
 			get {
 				return _TextColor;
@@ -33,6 +56,7 @@ namespace BasicAttributes
 			}
 		}
 
+		[Category( "Text" )]
 		public bool Localizable {
 			get {
 				return _Localizable;
@@ -42,6 +66,8 @@ namespace BasicAttributes
 			}
 		}
 
+		[Category( "Text" )]
+		[DefaultValue(Justification.MiddleCenter)]
 		public Justification Alignment {
 			get {
 				return _Alignment;
@@ -50,13 +76,9 @@ namespace BasicAttributes
 				this._Alignment = value;
 			}
 		}
-	}
 
-	public interface Interface_Text
-	{
-		int FontSize {
-			get;
-			set;
+		public override string ToString( ) {
+			return String.Empty;
 		}
 	}
 }

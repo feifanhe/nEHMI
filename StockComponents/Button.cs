@@ -2,51 +2,81 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using BasicAttributes;
+using System.ComponentModel;
 using System.Drawing;
+using System.Reflection;
 
 namespace StockComponents
 {
-	public class Button : Text
+	public class Button //: IText
 	{
-		//Text TextAttribute = new Text();
+		public Button(){
+		}
 		
-		////#region Interface_Text Members
+		private Text _Text = new Text();
+		[TypeConverter( typeof( ExpandableObjectConverter ) )]
+		public Text Text {
+			get {
+				return _Text;
+			}
+		}
 
-		////Text TextAttribute;
+		private BasicAttributes.Image _Image = new BasicAttributes.Image();
+		[TypeConverter( typeof( ExpandableObjectConverter ) )]
+		public BasicAttributes.Image Image {
+			get {
+				return _Image;
+			}
+		}
 
+		public object[] GetProperties( ) {
+			//Type type = typeof( Person );
+			//PropertyInfo[] properties = type.GetProperties();
+			//foreach( PropertyInfo property in properties )
+			//{
+			//    Console.WriteLine( "{0} = {1}", property.Name, property.GetValue( person, null ) );
+			//}
+
+			return typeof( Button ).GetProperties();
+		}
+
+		//#region IText Members
+
+		//private IText _Text = new Text();
+		
 		//public int FontSize {
 		//    get {
-		//        return TextAttribute.FontSize;
+		//        return _Text.FontSize;
 		//    }
 		//    set {
-		//        this.TextAttribute.FontSize = value;
-		//    }
-		//}
-
-		//public Justification Alignment {
-		//    get {
-		//        return TextAttribute.Alignment;
-		//    }
-		//    set {
-		//        this.TextAttribute.Alignment = value;
-		//    }
-		//}
-
-		//public bool Localizable {
-		//    get {
-		//        return TextAttribute.Localizable;
-		//    }
-		//    set {
-		//        this.TextAttribute.Localizable = value;
+		//        _Text.FontSize = value;
 		//    }
 		//}
 
 		//public Color TextColor {
 		//    get {
-		//        return TextAttribute.TextColor;
+		//        return _Text.TextColor;
 		//    }
 		//    set {
-		//        this.TextAttribute.TextColor = value;
+		//        _Text.TextColor = value;
+		//    }
+		//}
+
+		//public bool Localizable {
+		//    get {
+		//        return _Text.Localizable;
+		//    }
+		//    set {
+		//        _Text.Localizable = value;
+		//    }
+		//}
+
+		//public Justification Alignment {
+		//    get {
+		//        return _Text.Alignment;
+		//    }
+		//    set {
+		//        _Text.Alignment = value;
 		//    }
 		//}
 

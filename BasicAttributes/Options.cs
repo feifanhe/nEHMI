@@ -17,7 +17,7 @@ namespace BasicAttributes
 		BottomRight
 	}
 
-	public enum BorderStyle
+	internal enum BorderStyle
 	{
 		WithBorder,
 		WithoutBorder

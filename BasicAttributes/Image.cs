@@ -1,15 +1,21 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BasicAttributes
 {
-	abstract class Image
+	public class Image
 	{
 		private string _Source;
 		private bool _TransparentBackground;
 		private Justification _Alignment;
 
+		//public Image(string Source) {
+		//    this._Source = Source;
+		//}
+
+		[Category("Image")]
 		public string Source {
 			get {
 				return _Source;
@@ -19,6 +25,7 @@ namespace BasicAttributes
 			}
 		}
 
+		[Category( "Image" )]
 		public bool TransparentBackground {
 			get {
 				return _TransparentBackground;
@@ -28,6 +35,7 @@ namespace BasicAttributes
 			}
 		}
 
+		[Category( "Image" )]
 		public Justification Alignment {
 			get {
 				return _Alignment;
