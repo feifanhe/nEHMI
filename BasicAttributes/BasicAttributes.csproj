@@ -33,14 +33,15 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assistance.cs" />
-    <Compile Include="Image.cs" />
-    <Compile Include="Options.cs" />
+    <Compile Include="Attributes\Assistance.cs" />
+    <Compile Include="Helper\AttributesPacker.cs" />
+    <Compile Include="Attributes\Image.cs" />
+    <Compile Include="Details\Options.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Text.cs" />
+    <Compile Include="Attributes\Text.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <None Include="Details\ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -11,11 +11,8 @@ namespace BasicAttributes
 		private bool _TransparentBackground;
 		private Justification _Alignment;
 
-		//public Image(string Source) {
-		//    this._Source = Source;
-		//}
-
 		[Category("Image")]
+		[Description("The path of the shown image.")]
 		public string Source {
 			get {
 				return _Source;
@@ -26,6 +23,7 @@ namespace BasicAttributes
 		}
 
 		[Category( "Image" )]
+		[Description("Checked to have transparent color for the image. GIF only.")]
 		public bool TransparentBackground {
 			get {
 				return _TransparentBackground;
@@ -36,6 +34,7 @@ namespace BasicAttributes
 		}
 
 		[Category( "Image" )]
+		[Description("Set the alignment of the image displayed.")]
 		public Justification Alignment {
 			get {
 				return _Alignment;

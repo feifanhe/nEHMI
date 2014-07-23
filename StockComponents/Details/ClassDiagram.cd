@@ -4,8 +4,8 @@
   <Class Name="StockComponents.Button">
     <Position X="4.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <FileName>Button.cs</FileName>
-      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAABQAAAAACAAAAAA=</HashCode>
+      <FileName>Components\Button.cs</FileName>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAABQAAAAAKAACAAA=</HashCode>
     </TypeIdentifier>
   </Class>
 </ClassDiagram>

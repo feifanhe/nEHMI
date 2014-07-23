@@ -4,35 +4,35 @@
   <Class Name="BasicAttributes.Image" BaseTypeListCollapsed="true">
     <Position X="1" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <FileName>Image.cs</FileName>
+      <FileName>Attributes\Image.cs</FileName>
       <HashCode>AAAAAAAAAgAAAQAAADAAAAAAAEAAAAAAAAAAAAAAAAg=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="BasicAttributes.Text" BaseTypeListCollapsed="true">
     <Position X="2.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <FileName>Text.cs</FileName>
+      <FileName>Attributes\Text.cs</FileName>
       <HashCode>AAAAAQAAAAAEAQAMACAAAgAAEAAAAAABAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="BasicAttributes.Assistance">
     <Position X="2.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <FileName>Assistance.cs</FileName>
+      <FileName>Attributes\Assistance.cs</FileName>
       <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Enum Name="BasicAttributes.Justification" Collapsed="true">
     <Position X="8.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <FileName>Options.cs</FileName>
+      <FileName>Details\Options.cs</FileName>
       <HashCode>AgAAAgAIAAAAABAAACAAAQAAAAAAAAAAAAAACAgAAEA=</HashCode>
     </TypeIdentifier>
   </Enum>
   <Enum Name="BasicAttributes.BorderStyle" Collapsed="true">
     <Position X="6.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <FileName>Options.cs</FileName>
+      <FileName>Details\Options.cs</FileName>
       <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Enum>

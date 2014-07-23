@@ -6,26 +6,6 @@ using System.ComponentModel;
 
 namespace BasicAttributes
 {
-	public interface IText
-	{
-		int FontSize {
-			get;
-			set;
-		}
-		Color TextColor {
-			get;
-			set;
-		}
-		bool Localizable {
-			get;
-			set;
-		}
-		Justification Alignment {
-			get;
-			set;
-		}
-	}
-	
 	public class Text
 	{
 		private int _FontSize;
@@ -57,6 +37,7 @@ namespace BasicAttributes
 		}
 
 		[Category( "Text" )]
+		[Description( "Checked when the text needs to have multilingual requirement." )]
 		public bool Localizable {
 			get {
 				return _Localizable;
@@ -67,6 +48,7 @@ namespace BasicAttributes
 		}
 
 		[Category( "Text" )]
+		[Description( "Set the alignment of the text displayed." )]
 		[DefaultValue(Justification.MiddleCenter)]
 		public Justification Alignment {
 			get {
@@ -75,10 +57,6 @@ namespace BasicAttributes
 			set {
 				this._Alignment = value;
 			}
-		}
-
-		public override string ToString( ) {
-			return String.Empty;
 		}
 	}
 }
