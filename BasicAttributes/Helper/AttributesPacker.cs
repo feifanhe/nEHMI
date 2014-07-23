@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Reflection;
+using System.Text;
 
 namespace BasicAttributes
 {
@@ -175,19 +176,22 @@ namespace BasicAttributes
 		private object _Value = null;
 		private string _Description = string.Empty;
 
-		public CustomProperty(PropertyInfo property, object target) //, object value, bool ReadOnly, bool Visible )
+		public CustomProperty(PropertyInfo property, object target)
 		{
-			//this._Name = Name;
-			//this._Value = value;
-			//this._ReadOnly = ReadOnly;
-			//this._Visible = Visible;
-
 			this._Name = property.Name;
 			this._ReadOnly = false;
 			this._Visible = true;
 			this._Value = property.GetValue( target, null );
 			this._Category = GetAttribute<CategoryAttribute>( property ).Category;
 			this._Description = GetAttribute<DescriptionAttribute>( property ).Description;
+			
+			/* 
+			 * If null is an allowable option, change:
+			 *		GetAttribute<attribute>( property ).detail;
+			 * to:
+			 *		( GetAttribute<attribute>( property ) ?? attribute.Default ).deteail;
+			 * to avoid the NullReferenceException from showing.
+			 */
 		}
 
 		private T GetAttribute<T>(PropertyInfo property) {
@@ -295,9 +299,26 @@ namespace BasicAttributes
 		{
 			get
 			{
-				return m_Property.Name;
+				// pre-process display name whenever property grid callup the name
+				return AddSpacesToSentence( m_Property.Name, true );
 			}
-			
+		}
+
+		private string AddSpacesToSentence(string text, bool preserveAcronyms) {
+			if( string.IsNullOrEmpty( text ) )
+				return string.Empty;
+			StringBuilder newText = new StringBuilder( text.Length * 2 );
+			newText.Append( text[ 0 ] );
+			for( int i = 1; i < text.Length; i++ )
+			{
+				if( char.IsUpper( text[ i ] ) )
+					if( ( text[ i - 1 ] != ' ' && !char.IsUpper( text[ i - 1 ] ) ) ||
+						( preserveAcronyms && char.IsUpper( text[ i - 1 ] ) &&
+						 i < text.Length - 1 && !char.IsUpper( text[ i + 1 ] ) ) )
+						newText.Append( ' ' );
+				newText.Append( text[ i ] );
+			}
+			return newText.ToString();
 		}
 
 		public override bool IsReadOnly

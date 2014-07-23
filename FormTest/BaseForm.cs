@@ -20,8 +20,7 @@ namespace FormTest
 			InitializeComponent();
 
 			StockComponents.Button testBtn = new StockComponents.Button();
-			//testBtn.Text.FontSize = 12;
-			testBtn.Image.Source = "IMAGE SRC";
+			testBtn.Text.FontSize = 12;
 
 			propertyGrid.SelectedObject = testBtn.Properties;
 		}

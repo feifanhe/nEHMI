@@ -8,14 +8,9 @@ namespace BasicAttributes
 {
 	public class Text
 	{
-		private int _FontSize;
-		private Color _TextColor;
-		private bool _Localizable;
-		private Justification _Alignment;
-
+		private int _FontSize = 9;
 		[Category( "Text" )]
 		[Description( "Set the font size of the text displayed." )]
-		[DefaultValue(12)]
 		public int FontSize {
 			get {
 				return _FontSize;
@@ -25,6 +20,7 @@ namespace BasicAttributes
 			}
 		}
 
+		private Color _TextColor = SystemColors.ControlText;
 		[Category( "Text" )]
 		[Description( "Set the color of the text displayed." )]
 		public Color TextColor {
@@ -36,6 +32,7 @@ namespace BasicAttributes
 			}
 		}
 
+		private bool _Localizable = false;
 		[Category( "Text" )]
 		[Description( "Checked when the text needs to have multilingual requirement." )]
 		public bool Localizable {
@@ -47,9 +44,9 @@ namespace BasicAttributes
 			}
 		}
 
+		private Justification _Alignment = Justification.MiddleCenter;
 		[Category( "Text" )]
 		[Description( "Set the alignment of the text displayed." )]
-		[DefaultValue(Justification.MiddleCenter)]
 		public Justification Alignment {
 			get {
 				return _Alignment;

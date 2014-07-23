@@ -2,24 +2,31 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
   <Font Name="Segoe UI" Size="9" />
   <Class Name="BasicAttributes.Image" BaseTypeListCollapsed="true">
-    <Position X="1" Y="3" Width="1.5" />
+    <Position X="4.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <FileName>Attributes\Image.cs</FileName>
       <HashCode>AAAAAAAAAgAAAQAAADAAAAAAAEAAAAAAAAAAAAAAAAg=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="BasicAttributes.Text" BaseTypeListCollapsed="true">
-    <Position X="2.75" Y="3" Width="1.5" />
+    <Position X="6.25" Y="3" Width="1.5" />
     <TypeIdentifier>
       <FileName>Attributes\Text.cs</FileName>
-      <HashCode>AAAAAQAAAAAEAQAMACAAAgAAEAAAAAABAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAQAAAAAEAQAIACAAAgAAEAAAAAABAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="BasicAttributes.Assistance">
-    <Position X="2.75" Y="0.5" Width="1.5" />
+    <Position X="8" Y="3" Width="1.5" />
     <TypeIdentifier>
       <FileName>Attributes\Assistance.cs</FileName>
       <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicAttributes.Common">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Attributes\Common.cs</FileName>
+      <HashCode>AEAAAEAAAAAAAACBAAAAIAaCCAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Enum Name="BasicAttributes.Justification" Collapsed="true">
