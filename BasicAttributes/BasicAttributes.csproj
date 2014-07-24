@@ -31,10 +31,12 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\Assistance.cs" />
     <Compile Include="Attributes\Common.cs" />
+    <Compile Include="Details\Multilingual.cs" />
     <Compile Include="Helper\AttributesPacker.cs" />
     <Compile Include="Attributes\Image.cs" />
     <Compile Include="Details\Options.cs" />

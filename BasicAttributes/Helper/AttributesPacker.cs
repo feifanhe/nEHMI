@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Reflection;
 using System.Text;
 
-namespace BasicAttributes
+namespace BasicAttributes.Helper
 {
 	/// <summary>
 	/// AttributesPacker (Which is binding to property grid)

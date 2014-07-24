@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
-using BasicAttributes;
 using System.ComponentModel;
 using System.Reflection;
+
+using BasicAttributes.Attributes;
+using BasicAttributes.Helper;
 
 namespace StockComponents
 {

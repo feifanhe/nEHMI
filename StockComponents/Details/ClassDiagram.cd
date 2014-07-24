@@ -2,10 +2,10 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Font Name="Segoe UI" Size="9" />
   <Class Name="StockComponents.Button">
-    <Position X="4.25" Y="4.25" Width="1.5" />
+    <Position X="0.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <FileName>Components\Button.cs</FileName>
-      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAABQAAAAAKAACAAA=</HashCode>
+      <HashCode>AAAACAAAAAAAAAAQAAAAAAAAAQAAABQAAAAAKAACAAA=</HashCode>
     </TypeIdentifier>
   </Class>
 </ClassDiagram>

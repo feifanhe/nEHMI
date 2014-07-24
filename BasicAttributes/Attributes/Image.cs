@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.ComponentModel;
 
-namespace BasicAttributes
+namespace BasicAttributes.Attributes
 {
 	public class Image
 	{
