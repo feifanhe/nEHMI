@@ -1,6 +1,9 @@
 using System.Drawing;
 using System.ComponentModel;
 
+using BasicAttributes.Details;
+using BasicAttributes.Helper;
+
 namespace BasicAttributes.Attributes
 {
 	public class Text
@@ -50,6 +53,48 @@ namespace BasicAttributes.Attributes
 			}
 			set {
 				this._Alignment = value;
+			}
+		}
+
+		private Multilingual _Caption = new Multilingual();
+		[Category( "Text" )]
+		[Description( "Text for users." )]
+		public string Caption {
+			get {
+				if(_Localizable)
+					return _Caption[this.Language];
+				else
+					return _Caption["Default"];
+			}
+			set {
+				if(_Localizable)
+					_Caption[this.Language] = value;
+				else
+				_Caption["Default"] = value;
+			}
+		}
+
+		private string _Language = string.Empty;
+		[Category("Text")]
+		[Description("Current language of the displayed text.")]
+		//[Browsable(true)]
+		[TypeConverter(typeof(LanguageConverter))]
+		public string Language {
+			get {
+				string S = "";
+				if( _Language != null && _Language.Length > 0)
+				{
+					S = _Language;
+				}
+				else
+				{
+					S = "Default";
+				}
+
+				return S;
+			}
+			set {
+				_Language = value;
 			}
 		}
 	}

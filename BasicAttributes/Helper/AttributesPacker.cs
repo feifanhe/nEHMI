@@ -175,6 +175,20 @@ namespace BasicAttributes.Helper
 		private bool _Visible = true;
 		private object _Value = null;
 		private string _Description = string.Empty;
+		private TypeConverter _Converter;
+
+		//public CustomProperty(PropertyInfo property, object target, TypeConverter Converter) {
+		//    //CustomProperty( property, target );
+
+		//    this._Name = property.Name;
+		//    this._ReadOnly = false;
+		//    this._Visible = true;
+		//    this._Value = property.GetValue( target, null );
+		//    this._Category = GetAttribute<CategoryAttribute>( property ).Category;
+		//    this._Description = GetAttribute<DescriptionAttribute>( property ).Description;
+
+		//    this._Converter = Converter;
+		//}
 
 		public CustomProperty(PropertyInfo property, object target)
 		{
@@ -184,7 +198,14 @@ namespace BasicAttributes.Helper
 			this._Value = property.GetValue( target, null );
 			this._Category = GetAttribute<CategoryAttribute>( property ).Category;
 			this._Description = GetAttribute<DescriptionAttribute>( property ).Description;
-			
+
+			TypeConverterAttribute TCA = GetAttribute<TypeConverterAttribute>( property );
+			if( TCA != null )
+			{
+				//this._Converter = TypeDescriptor.GetConverter( typeof( LanguageConverter ) );
+				this._Converter = new LanguageConverter();
+			}
+
 			/* 
 			 * If null is an allowable option, change:
 			 *		GetAttribute<attribute>( property ).detail;
@@ -232,17 +253,17 @@ namespace BasicAttributes.Helper
 			get {
 				return _Category;
 			}
-			set {
-				_Category = value;
-			}
 		}
 
 		public string Description {
 			get {
 				return _Description;
 			}
-			set {
-				_Description = value;
+		}
+
+		public TypeConverter Converter {
+			get {
+				return _Converter;
 			}
 		}
 	}
@@ -303,7 +324,6 @@ namespace BasicAttributes.Helper
 				return AddSpacesToSentence( m_Property.Name, true );
 			}
 		}
-
 		private string AddSpacesToSentence(string text, bool preserveAcronyms) {
 			if( string.IsNullOrEmpty( text ) )
 				return string.Empty;
@@ -347,6 +367,12 @@ namespace BasicAttributes.Helper
 		public override Type PropertyType {
 			get {
 				return m_Property.Value.GetType();
+			}
+		}
+
+		public override TypeConverter Converter {
+			get {
+				return m_Property.Converter;
 			}
 		}
 

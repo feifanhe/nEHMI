@@ -1,4 +1,3 @@
-
 namespace BasicAttributes.Attributes
 {
 	public class Assistance

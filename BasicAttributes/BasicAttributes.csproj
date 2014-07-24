@@ -36,6 +36,7 @@
   <ItemGroup>
     <Compile Include="Attributes\Assistance.cs" />
     <Compile Include="Attributes\Common.cs" />
+    <Compile Include="Helper\Converter.cs" />
     <Compile Include="Details\Multilingual.cs" />
     <Compile Include="Helper\AttributesPacker.cs" />
     <Compile Include="Attributes\Image.cs" />
