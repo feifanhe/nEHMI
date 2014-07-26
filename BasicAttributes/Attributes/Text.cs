@@ -3,14 +3,18 @@ using System.ComponentModel;
 
 using BasicAttributes.Details;
 using BasicAttributes.Helper;
+using System.Collections.Generic;
+using System;
 
 namespace BasicAttributes.Attributes
 {
+	[TypeConverter( typeof( ExpandableObjectConverter ) )]
 	public class Text
 	{
 		private int _FontSize = 9;
 		[Category( "Text" )]
 		[Description( "Set the font size of the text displayed." )]
+		//[DefaultValue(12)]
 		public int FontSize {
 			get {
 				return _FontSize;
@@ -61,16 +65,16 @@ namespace BasicAttributes.Attributes
 		[Description( "Text for users." )]
 		public string Caption {
 			get {
-				if(_Localizable)
-					return _Caption[this.Language];
+				if( _Localizable )
+					return _Caption[ this.Language ];
 				else
-					return _Caption["Default"];
+					return _Caption[ "Default" ];
 			}
 			set {
-				if(_Localizable)
-					_Caption[this.Language] = value;
+				if( _Localizable )
+					_Caption[ this.Language ] = value;
 				else
-				_Caption["Default"] = value;
+					_Caption[ "Default" ] = value;
 			}
 		}
 
@@ -81,17 +85,17 @@ namespace BasicAttributes.Attributes
 		[TypeConverter(typeof(LanguageConverter))]
 		public string Language {
 			get {
-				string S = "";
+				string SelectedLanguage = "";
 				if( _Language != null && _Language.Length > 0)
 				{
-					S = _Language;
+					SelectedLanguage = _Language;
 				}
 				else
 				{
-					S = "Default";
+					SelectedLanguage = "Default";
 				}
 
-				return S;
+				return SelectedLanguage;
 			}
 			set {
 				_Language = value;

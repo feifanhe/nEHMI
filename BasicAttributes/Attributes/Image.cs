@@ -2,6 +2,7 @@ using System.ComponentModel;
 
 namespace BasicAttributes.Attributes
 {
+	[TypeConverter( typeof( ExpandableObjectConverter ) )]
 	public class Image
 	{
 		private string _Source = string.Empty;

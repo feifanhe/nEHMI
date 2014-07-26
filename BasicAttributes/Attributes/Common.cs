@@ -3,6 +3,7 @@ using System.ComponentModel;
 
 namespace BasicAttributes.Attributes
 {
+	[TypeConverter( typeof( ExpandableObjectConverter ) )]
 	public class Common
 	{
 		private string _Group = string.Empty;
@@ -63,6 +64,42 @@ namespace BasicAttributes.Attributes
 			}
 			set {
 				_Visibility = value;
+			}
+		}
+
+		private string _InvisibleCondition;
+		[Category( "Common" )]
+		[Description( "Describe the invisible condition." )]
+		public string InvisibleCondition {
+			get {
+				return _InvisibleCondition;
+			}
+			set {
+				_InvisibleCondition = value;
+			}
+		}
+
+		private string _VisibleCondition;
+		[Category( "Common" )]
+		[Description( "Describe the visible condition." )]
+		public string VisibleCondition {
+			get {
+				return _VisibleCondition;
+			}
+			set {
+				_VisibleCondition = value;
+			}
+		}
+
+		private string _EnableCondition;
+		[Category( "Common" )]
+		[Description( "Describe when to enable the component." )]
+		public string EnableCondition {
+			get {
+				return _EnableCondition;
+			}
+			set {
+				_EnableCondition = value;
 			}
 		}
 	}

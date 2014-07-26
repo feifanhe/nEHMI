@@ -177,34 +177,11 @@ namespace BasicAttributes.Helper
 		private string _Description = string.Empty;
 		private TypeConverter _Converter;
 
-		//public CustomProperty(PropertyInfo property, object target, TypeConverter Converter) {
-		//    //CustomProperty( property, target );
-
-		//    this._Name = property.Name;
-		//    this._ReadOnly = false;
-		//    this._Visible = true;
-		//    this._Value = property.GetValue( target, null );
-		//    this._Category = GetAttribute<CategoryAttribute>( property ).Category;
-		//    this._Description = GetAttribute<DescriptionAttribute>( property ).Description;
-
-		//    this._Converter = Converter;
-		//}
-
-		public CustomProperty(PropertyInfo property, object target)
-		{
+		public CustomProperty(PropertyInfo property, object target) {
 			this._Name = property.Name;
 			this._ReadOnly = false;
 			this._Visible = true;
 			this._Value = property.GetValue( target, null );
-			this._Category = GetAttribute<CategoryAttribute>( property ).Category;
-			this._Description = GetAttribute<DescriptionAttribute>( property ).Description;
-
-			TypeConverterAttribute TCA = GetAttribute<TypeConverterAttribute>( property );
-			if( TCA != null )
-			{
-				//this._Converter = TypeDescriptor.GetConverter( typeof( LanguageConverter ) );
-				this._Converter = new LanguageConverter();
-			}
 
 			/* 
 			 * If null is an allowable option, change:
@@ -213,6 +190,19 @@ namespace BasicAttributes.Helper
 			 *		( GetAttribute<attribute>( property ) ?? attribute.Default ).deteail;
 			 * to avoid the NullReferenceException from showing.
 			 */
+			this._Category = GetAttribute<CategoryAttribute>( property ).Category;
+			this._Description = GetAttribute<DescriptionAttribute>( property ).Description;
+
+			string ConvertName = ( GetAttribute<TypeConverterAttribute>( property ) ?? TypeConverterAttribute.Default )
+									.ConverterTypeName.Split( ',' )[ 0 ];
+			try
+			{
+				this._Converter = (TypeConverter)( Activator.CreateInstance( Assembly.GetExecutingAssembly().GetType( ConvertName ) ) );
+			}
+			catch
+			{
+			}
+
 		}
 
 		private T GetAttribute<T>(PropertyInfo property) {
@@ -312,7 +302,8 @@ namespace BasicAttributes.Helper
 		{
 			get
 			{
-				return m_Property.Category;
+				//return m_Property.Category;
+				return "CATEGORY";
 			}
 		}
 
@@ -376,8 +367,6 @@ namespace BasicAttributes.Helper
 			}
 		}
 
-		#endregion
-
-			
+		#endregion		
 	}
 }

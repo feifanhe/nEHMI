@@ -33,21 +33,24 @@ namespace StockComponents
 			}
 		}
 
-		public AttributesPacker Properties {
-			get {
-				packed.Clear();
+		//public AttributesPacker Properties {
+		//    get {
+		//        packed.Clear();
 
-				#region General Inclusion
-				packed.Add( _Common );
-				packed.Add( _Text );
-				packed.Add( _Image );
-				#endregion
+		//        #region General Inclusion
+		//        packed.Add( _Common );
+		//        packed.Add( _Text );
+		//        packed.Add( _Image );
+		//        #endregion
 
-				#region Exceptional Removal
-				#endregion
+		//        #region Exceptional Removal
+		//        #endregion
 
-				return packed;
-			}
-		}
+		//        return packed;
+		//    }
+		//    set {
+		//        packed = value;
+		//    }
+		//}
 	}
 }

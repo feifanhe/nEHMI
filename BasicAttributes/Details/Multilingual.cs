@@ -6,40 +6,43 @@ namespace BasicAttributes.Details
 {
 	public class Multilingual
 	{
-		private Dictionary<string, string> values = new Dictionary<string, string>();
+		private static Dictionary<string, string> _Values = new Dictionary<string, string>();
 
 		public Multilingual( ) {
-			values.Add( "Default", string.Empty );
+			_Values.Add( "Default", string.Empty );
 		}
 
 		public Dictionary<string, string> Values {
 			get {
-				return values;
+				return _Values;
 			}
 			set {
-				values = value;
+				_Values = value;
 			}
 		}
 
 		public string this[ string culture ] {
 			get {
-				string result = string.Empty;
-				if( values.ContainsKey( culture ) )
+				if( _Values.ContainsKey( culture ) )
 				{
-					result = values[ culture ];
+					return _Values[ culture ];
 				}
-				return result;
+				return string.Empty;
 			}
 			set {
 				string newVal = value;
-				if( values.ContainsKey( culture ) )
+				if( value == string.Empty )
+					return;
+				if( _Values.ContainsKey( culture ) )
 				{
-					values[ culture ] = newVal;
+					_Values[ culture ] = newVal;
 				}
 				else
 				{
-					values.Add( culture, newVal );
+					_Values.Add( culture, newVal );
 				}
+
+				Console.WriteLine( "* SET " + culture + " AS " + newVal + " *");
 			}
 		}
 
@@ -48,10 +51,19 @@ namespace BasicAttributes.Details
 		public static string[] GetCultures {
 			get {
 				CultureInfo[] _CultureInfo = CultureInfo.GetCultures( CultureTypes.SpecificCultures );
-				_Cultures = new string[ _CultureInfo.Length ];
+				_Cultures = new string[ _CultureInfo.Length + 1 ];
 
 				for( int i = 0; i < _CultureInfo.Length; i++ )
-					_Cultures[ i ] = _CultureInfo[ i ].DisplayName;
+				{
+					string Language = _CultureInfo[ i ].DisplayName;
+					string Contents = string.Empty;
+					if( _Values.ContainsKey( Language ) )
+						Contents = " = " + _Values[ Language ];
+					_Cultures[ i ] = Language + Contents;
+				}
+
+				_Cultures[ _CultureInfo.Length ] = "Default";
+
 				return _Cultures;
 			}
 		}
