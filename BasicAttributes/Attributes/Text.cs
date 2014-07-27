@@ -5,6 +5,7 @@ using BasicAttributes.Details;
 using BasicAttributes.Helper;
 using System.Collections.Generic;
 using System;
+using System.Reflection;
 
 namespace BasicAttributes.Attributes
 {
@@ -40,12 +41,24 @@ namespace BasicAttributes.Attributes
 		[Category( "Text" )]
 		[Description( "Checked when the text needs to have multilingual requirement." )]
 		[DefaultValue( false )]
+		[RefreshProperties( RefreshProperties.All )]
 		public bool Localizable {
 			get {
 				return _Localizable;
 			}
 			set {
 				this._Localizable = value;
+
+				// Acquire the descriptor for Language
+				PropertyDescriptor descriptor = TypeDescriptor.GetProperties( this.GetType() )[ "Language" ];
+				ReadOnlyAttribute attrib = (ReadOnlyAttribute)descriptor.Attributes[ typeof( ReadOnlyAttribute ) ];
+				FieldInfo isReadOnly = attrib.GetType().GetField( "isReadOnly", BindingFlags.NonPublic | BindingFlags.Instance );
+
+				// Set the Language to readonly, if _Localizable is false
+				isReadOnly.SetValue( attrib, !_Localizable );
+
+				if( !_Localizable )
+					Language = "Default";
 			}
 		}
 
@@ -84,6 +97,8 @@ namespace BasicAttributes.Attributes
 		[Category( "Text" )]
 		[Description( "Current language of the displayed text." )]
 		[TypeConverter( typeof( LanguageConverter ) )]
+		[RefreshProperties(RefreshProperties.All)]
+		[ReadOnly(true)]
 		public string Language {
 			get {
 				string SelectedLanguage = "";

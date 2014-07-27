@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
 using System.Drawing;
+using System.Collections;
 
 namespace BasicAttributes.Helper
 {
@@ -21,7 +22,7 @@ namespace BasicAttributes.Helper
 
 			// add the property for our count of vertices
 			//
-			propList.Add( new NumPointsPropertyDescriptor( this ) );
+			//propList.Add( new NumPointsPropertyDescriptor( this ) );
 
 			//// add a property descriptor for each vertex
 			////

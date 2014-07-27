@@ -59,7 +59,7 @@ namespace BasicAttributes.Details
 					string Contents = string.Empty;
 					if( _Values.ContainsKey( Language ) )
 						Contents = " = " + _Values[ Language ];
-					_Cultures[ i ] = Language + Contents;
+					_Cultures[ i ] = Language;// +Contents;
 				}
 
 				_Cultures[ _CultureInfo.Length ] = "Default";
