@@ -8,11 +8,13 @@ using BasicAttributes.Helper;
 
 namespace StockComponents
 {
+	[PropertyTab(typeof(CustomPropertyTab), PropertyTabScope.Component)]
 	public class Button
 	{
 		private AttributesPacker packed = new AttributesPacker();
 
 		private Common _Common = new Common();
+		//[Browsable(false)]
 		public Common Common {
 			get {
 				return _Common;

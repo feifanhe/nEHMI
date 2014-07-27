@@ -21,6 +21,7 @@ namespace BasicAttributes.Attributes
 		[Category( "Image" )]
 		[Description( @"Checked to have transparent color for the image.
 						This option can only apply to GIF images." )]
+		[DefaultValue( false )]
 		public bool AllowTransparent {
 			get {
 				return _AllowTransparent;
@@ -33,6 +34,7 @@ namespace BasicAttributes.Attributes
 		private Justification _Alignment = Justification.MiddleCenter;
 		[Category( "Image" )]
 		[Description( "Set the alignment of the image displayed." )]
+		[DefaultValue( Justification.MiddleCenter )]
 		public Justification Alignment {
 			get {
 				return _Alignment;
@@ -40,6 +42,10 @@ namespace BasicAttributes.Attributes
 			set {
 				this._Alignment = value;
 			}
+		}
+
+		public override string ToString( ) {
+			return string.Empty;
 		}
 	}
 }

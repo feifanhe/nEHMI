@@ -58,6 +58,7 @@ namespace BasicAttributes.Attributes
 		[Category( "Common" )]
 		[Description( @"Visibility of the component.
 						Parameter will be overridden by Visible Condition." )]
+		[DefaultValue( true )]
 		public bool Visibility {
 			get {
 				return _Visibility;
@@ -103,26 +104,42 @@ namespace BasicAttributes.Attributes
 			}
 		}
 
-		
-
-		private Dimension _Dimension = new Dimension();
+		private Size _Size = new Size();
 		[Category( "Common" )]
-		[Description( "Set the height and width of the component." )]
+		[Description( "The size of component in pixels." )]
 		[TypeConverter( typeof( ExpandableObjectConverter ) )]
-		public Dimension Dimension {
+		public Size Dimension {
 			get {
-				return _Dimension;
+				return _Size;
 			}
 			set {
-				_Dimension = value;
+				_Size = value;
 			}
+		}
+
+		private Location _Location = new Location();
+		[Category( "Common" )]
+		[Description( "Position of the top-left corner of the component with respect to the entire view." )]
+		[TypeConverter( typeof( ExpandableObjectConverter ) )]
+		public Location Position {
+			get {
+				return _Location;
+			}
+			set {
+				_Location = value;
+			}
+		}
+
+		public override string ToString( ) {
+			return string.Empty;
 		}
 	}
 
-	public class Dimension
+	public class Size
 	{
-		private int _Height;
-		private int _Width;
+		private int _Height = 0;
+		[DefaultValue( 0 )]
+		[RefreshProperties( RefreshProperties.All )]
 		public int Height {
 			get {
 				return _Height;
@@ -131,6 +148,10 @@ namespace BasicAttributes.Attributes
 				_Height = value;
 			}
 		}
+
+		private int _Width = 0;
+		[DefaultValue( 0 )]
+		[RefreshProperties( RefreshProperties.All )]
 		public int Width {
 			get {
 				return _Width;
@@ -138,6 +159,54 @@ namespace BasicAttributes.Attributes
 			set {
 				_Width = value;
 			}
+		}
+
+		public override string ToString( ) {
+			return _Height.ToString() + ", " + _Width.ToString();
+		}
+	}
+
+	public class Location
+	{
+		private int _X = 0;
+		[DefaultValue( 0 )]
+		[RefreshProperties( RefreshProperties.All )]
+		public int X {
+			get {
+				return _X;
+			}
+			set {
+				_X = value;
+			}
+		}
+
+		private int _Y = 0;
+		[DefaultValue( 0 )]
+		[RefreshProperties( RefreshProperties.All )]
+		public int Y {
+			get {
+				return _Y;
+			}
+			set {
+				_Y = value;
+			}
+		}
+
+		private bool _Lock = false;
+		[Category( "Common" )]
+		[Description( "Lock the component to avoid relative movements between components." )]
+		[DefaultValue( false )]
+		public bool Lock {
+			get {
+				return _Lock;
+			}
+			set {
+				_Lock = value;
+			}
+		}
+
+		public override string ToString( ) {
+			return _X.ToString() + ", " + _Y.ToString();
 		}
 	}
 }

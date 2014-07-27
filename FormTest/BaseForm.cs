@@ -22,6 +22,9 @@ namespace FormTest
 
 		public BaseForm( ) {
 			InitializeComponent();
+
+			propertyGrid.PropertySort = PropertySort.Alphabetical;
+			//propertyGrid.ToolbarVisible = false;
 		}
 
 		private void propertyGrid_PropertyValueChanged(object s, PropertyValueChangedEventArgs e) {

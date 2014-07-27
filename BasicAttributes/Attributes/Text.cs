@@ -14,7 +14,7 @@ namespace BasicAttributes.Attributes
 		private int _FontSize = 9;
 		[Category( "Text" )]
 		[Description( "Set the font size of the text displayed." )]
-		//[DefaultValue(12)]
+		[DefaultValue( 9 )]
 		public int FontSize {
 			get {
 				return _FontSize;
@@ -39,6 +39,7 @@ namespace BasicAttributes.Attributes
 		private bool _Localizable = false;
 		[Category( "Text" )]
 		[Description( "Checked when the text needs to have multilingual requirement." )]
+		[DefaultValue( false )]
 		public bool Localizable {
 			get {
 				return _Localizable;
@@ -51,6 +52,7 @@ namespace BasicAttributes.Attributes
 		private Justification _Alignment = Justification.MiddleCenter;
 		[Category( "Text" )]
 		[Description( "Set the alignment of the text displayed." )]
+		[DefaultValue( Justification.MiddleCenter )]
 		public Justification Alignment {
 			get {
 				return _Alignment;
@@ -81,7 +83,6 @@ namespace BasicAttributes.Attributes
 		private string _Language = string.Empty;
 		[Category( "Text" )]
 		[Description( "Current language of the displayed text." )]
-		//[Browsable(true)]
 		[TypeConverter( typeof( LanguageConverter ) )]
 		public string Language {
 			get {
@@ -100,6 +101,10 @@ namespace BasicAttributes.Attributes
 			set {
 				_Language = value;
 			}
+		}
+
+		public override string ToString( ) {
+			return string.Empty;
 		}
 	}
 }

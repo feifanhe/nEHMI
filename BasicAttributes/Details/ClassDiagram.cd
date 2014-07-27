@@ -5,14 +5,14 @@
     <Position X="5.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>Attributes\Image.cs</FileName>
-      <HashCode>AAAAAAAAAgAAAQAAACAAAAAAAEAAAAAAAAAAAAQAAIA=</HashCode>
+      <HashCode>AAAAAAAAAgAAAQAEACAAAAAAAEAAAAAAAAAAAAQAAIA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="BasicAttributes.Attributes.Text" BaseTypeListCollapsed="true">
     <Position X="4" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>Attributes\Text.cs</FileName>
-      <HashCode>AAAAAQAACAAEAQAIACAAAgQAEAAAAAABCAACAAAAAAA=</HashCode>
+      <HashCode>AAAAAQAACAAEAQAMACAAAgQAEAAAAAABCAACAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="BasicAttributes.Attributes.Assistance">
@@ -26,7 +26,7 @@
     <Position X="0.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>Attributes\Common.cs</FileName>
-      <HashCode>CEAAAEAABAQCCCCBAAAAIAaCCAAAQAAAAAAABAAAAAA=</HashCode>
+      <HashCode>CEAAAEAgBAQCACClAAAAIAaCCAAAQAAAAAAABAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="BasicAttributes.Details.Multilingual">
@@ -50,11 +50,18 @@
       <HashCode>gAAAAAAAAAAAAAAEAAIAAAAgAAAAAAAAAABApK7IBQA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="BasicAttributes.Attributes.Dimension">
+  <Class Name="BasicAttributes.Attributes.Location">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Attributes\Common.cs</FileName>
+      <HashCode>AAAQAAAAIAAAAAAEAAAAAAAAAAQAAAAAAAAAAAAAYCA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicAttributes.Attributes.Size">
     <Position X="5.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>Attributes\Common.cs</FileName>
-      <HashCode>AAAAAAAABAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAABA=</HashCode>
+      <HashCode>AAAAAAAABAAAAAAEAAAAAEAAAAAAAAAAAAAAAIAAABA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Enum Name="BasicAttributes.Justification" Collapsed="true">
