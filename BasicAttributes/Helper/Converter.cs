@@ -1,7 +1,7 @@
+using System;
 using System.ComponentModel;
 
 using BasicAttributes.Details;
-using System;
 
 namespace BasicAttributes.Helper
 {

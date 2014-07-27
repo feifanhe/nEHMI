@@ -102,5 +102,42 @@ namespace BasicAttributes.Attributes
 				_EnableCondition = value;
 			}
 		}
+
+		
+
+		private Dimension _Dimension = new Dimension();
+		[Category( "Common" )]
+		[Description( "Set the height and width of the component." )]
+		[TypeConverter( typeof( ExpandableObjectConverter ) )]
+		public Dimension Dimension {
+			get {
+				return _Dimension;
+			}
+			set {
+				_Dimension = value;
+			}
+		}
+	}
+
+	public class Dimension
+	{
+		private int _Height;
+		private int _Width;
+		public int Height {
+			get {
+				return _Height;
+			}
+			set {
+				_Height = value;
+			}
+		}
+		public int Width {
+			get {
+				return _Width;
+			}
+			set {
+				_Width = value;
+			}
+		}
 	}
 }

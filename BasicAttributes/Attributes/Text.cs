@@ -79,14 +79,14 @@ namespace BasicAttributes.Attributes
 		}
 
 		private string _Language = string.Empty;
-		[Category("Text")]
-		[Description("Current language of the displayed text.")]
+		[Category( "Text" )]
+		[Description( "Current language of the displayed text." )]
 		//[Browsable(true)]
-		[TypeConverter(typeof(LanguageConverter))]
+		[TypeConverter( typeof( LanguageConverter ) )]
 		public string Language {
 			get {
 				string SelectedLanguage = "";
-				if( _Language != null && _Language.Length > 0)
+				if( _Language != null && _Language.Length > 0 )
 				{
 					SelectedLanguage = _Language;
 				}
