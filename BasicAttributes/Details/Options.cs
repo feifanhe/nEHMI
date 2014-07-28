@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BasicAttributes
 {
@@ -21,6 +22,68 @@ namespace BasicAttributes
 	{
 		WithBorder,
 		WithoutBorder
+	}
+
+	public enum AssistancType
+	{
+		Label,
+		Tag
+	}
+
+	public enum Format
+	{
+		[Description( "Long" )]
+		LNG,
+
+		[Description( "Long:1F" )]
+		LNG_1F,
+		[Description( "Long:2F" )]
+		LNG_2F,
+		[Description( "Long:3F" )]
+		LNG_3F,
+
+		[Description( "Long:1H" )]
+		LNG_1H,
+		[Description( "Long:2H" )]
+		LNG_2H,
+		[Description( "Long:3H" )]
+		LNG_3H,
+
+		[Description( "Long:L" )]
+		LNG_L,
+		[Description( "Long:R" )]
+		LNG_R,
+		[Description( "Long:TL" )]
+		LNG_TL,
+		[Description( "Long:IL" )]
+		LNG_IL,
+
+		[Description( "Double" )]
+		DBL,
+
+		[Description( "Double:2F" )]
+		DBL_2F,
+		[Description( "Double:3F" )]
+		DBL_3F,
+
+		[Description( "Double:L" )]
+		DBL_L,
+		[Description( "Double:R" )]
+		DBL_R,
+		[Description( "Double:TL" )]
+		DBL_TL,
+		[Description( "Double:IL" )]
+		DBL_IL,
+
+		[Description( "String" )]
+		STR,
+
+		[Description( "1F" )]
+		F_1,
+		[Description( "2F" )]
+		F_2,
+		[Description( "3F" )]
+		F_3
 	}
 
 	public enum Scope
@@ -68,6 +131,15 @@ namespace BasicAttributes
 			get {
 				return _BitOperable;
 			}
+		}
+	}
+
+	public static class Enum<T>
+	{
+		public static string Description(T value) {
+			DescriptionAttribute[] da = (DescriptionAttribute[])( typeof( T ).GetField( value.ToString() )
+																			  .GetCustomAttributes( typeof( DescriptionAttribute ), false ) );
+			return da.Length > 0 ? da[ 0 ].Description : value.ToString();
 		}
 	}
 }

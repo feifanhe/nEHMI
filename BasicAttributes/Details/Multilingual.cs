@@ -9,7 +9,7 @@ namespace BasicAttributes.Details
 		private static Dictionary<string, string> _Values = new Dictionary<string, string>();
 
 		public Multilingual( ) {
-			_Values.Add( "Default", string.Empty );
+			//_Values.Add( "Default", string.Empty );
 		}
 
 		public Dictionary<string, string> Values {

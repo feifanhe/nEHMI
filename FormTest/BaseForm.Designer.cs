@@ -30,22 +30,23 @@ namespace FormTest
 			this.ButtonBtn = new System.Windows.Forms.Button();
 			this.PanelBtn = new System.Windows.Forms.Button();
 			this.MutualBtn = new System.Windows.Forms.Button();
+			this.DisplayBtn = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// propertyGrid
 			// 
 			this.propertyGrid.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( ( System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left )
 						| System.Windows.Forms.AnchorStyles.Right ) ) );
-			this.propertyGrid.Location = new System.Drawing.Point( 0, 0 );
+			this.propertyGrid.Location = new System.Drawing.Point( 12, 12 );
 			this.propertyGrid.Name = "propertyGrid";
-			this.propertyGrid.Size = new System.Drawing.Size( 284, 262 );
+			this.propertyGrid.Size = new System.Drawing.Size( 252, 262 );
 			this.propertyGrid.TabIndex = 0;
 			this.propertyGrid.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler( this.propertyGrid_PropertyValueChanged );
 			// 
 			// ButtonBtn
 			// 
 			this.ButtonBtn.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left ) ) );
-			this.ButtonBtn.Location = new System.Drawing.Point( 13, 268 );
+			this.ButtonBtn.Location = new System.Drawing.Point( 13, 327 );
 			this.ButtonBtn.Name = "ButtonBtn";
 			this.ButtonBtn.Size = new System.Drawing.Size( 75, 23 );
 			this.ButtonBtn.TabIndex = 1;
@@ -56,7 +57,7 @@ namespace FormTest
 			// PanelBtn
 			// 
 			this.PanelBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.PanelBtn.Location = new System.Drawing.Point( 101, 268 );
+			this.PanelBtn.Location = new System.Drawing.Point( 101, 327 );
 			this.PanelBtn.Name = "PanelBtn";
 			this.PanelBtn.Size = new System.Drawing.Size( 75, 23 );
 			this.PanelBtn.TabIndex = 2;
@@ -67,7 +68,7 @@ namespace FormTest
 			// MutualBtn
 			// 
 			this.MutualBtn.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
-			this.MutualBtn.Location = new System.Drawing.Point( 189, 268 );
+			this.MutualBtn.Location = new System.Drawing.Point( 189, 327 );
 			this.MutualBtn.Name = "MutualBtn";
 			this.MutualBtn.Size = new System.Drawing.Size( 75, 23 );
 			this.MutualBtn.TabIndex = 3;
@@ -75,11 +76,23 @@ namespace FormTest
 			this.MutualBtn.UseVisualStyleBackColor = true;
 			this.MutualBtn.Click += new System.EventHandler( this.MutualBtn_Click );
 			// 
+			// DisplayBtn
+			// 
+			this.DisplayBtn.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left ) ) );
+			this.DisplayBtn.Location = new System.Drawing.Point( 12, 298 );
+			this.DisplayBtn.Name = "DisplayBtn";
+			this.DisplayBtn.Size = new System.Drawing.Size( 75, 23 );
+			this.DisplayBtn.TabIndex = 4;
+			this.DisplayBtn.Text = "Display Prop";
+			this.DisplayBtn.UseVisualStyleBackColor = true;
+			this.DisplayBtn.Click += new System.EventHandler( this.DisplayBtn_Click );
+			// 
 			// BaseForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size( 276, 299 );
+			this.ClientSize = new System.Drawing.Size( 276, 358 );
+			this.Controls.Add( this.DisplayBtn );
 			this.Controls.Add( this.MutualBtn );
 			this.Controls.Add( this.PanelBtn );
 			this.Controls.Add( this.ButtonBtn );
@@ -96,6 +109,7 @@ namespace FormTest
 		private System.Windows.Forms.Button ButtonBtn;
 		private System.Windows.Forms.Button PanelBtn;
 		private System.Windows.Forms.Button MutualBtn;
+		private System.Windows.Forms.Button DisplayBtn;
 	}
 }
 

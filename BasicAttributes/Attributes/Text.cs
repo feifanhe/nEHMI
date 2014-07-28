@@ -97,8 +97,8 @@ namespace BasicAttributes.Attributes
 		[Category( "Text" )]
 		[Description( "Current language of the displayed text." )]
 		[TypeConverter( typeof( LanguageConverter ) )]
-		[RefreshProperties(RefreshProperties.All)]
-		[ReadOnly(true)]
+		[RefreshProperties( RefreshProperties.All )]
+		[ReadOnly( true )]
 		public string Language {
 			get {
 				string SelectedLanguage = "";
@@ -115,6 +115,18 @@ namespace BasicAttributes.Attributes
 			}
 			set {
 				_Language = value;
+			}
+		}
+
+		private AssistancType _AssistanceType;
+		[Category( "Text" )]
+		[Description( "Define the represent form of assistance, label or tag?" )]
+		public AssistancType AssistanceType {
+			get {
+				return _AssistanceType;
+			}
+			set {
+				_AssistanceType = value;
 			}
 		}
 

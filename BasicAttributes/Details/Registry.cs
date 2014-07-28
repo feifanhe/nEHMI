@@ -11,6 +11,10 @@ namespace BasicAttributes
 		private int _Address;
 		private int _Bit;
 
+		public override string ToString( ) {
+			return FullAddress;
+		}
+
 		public string FullAddress {
 			get {
 				if( _MemoryType.IsBitOperable )

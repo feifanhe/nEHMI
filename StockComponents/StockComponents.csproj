@@ -36,7 +36,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\Button.cs" />
+    <Compile Include="Components\Display.cs" />
+    <Compile Include="Components\Label.cs" />
     <Compile Include="Components\Panel.cs" />
+    <Compile Include="Components\Picture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

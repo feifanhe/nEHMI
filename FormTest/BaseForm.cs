@@ -19,6 +19,7 @@ namespace FormTest
 	{
 		private StockComponents.Button testBtn = new StockComponents.Button();
 		private StockComponents.Panel testPanel = new StockComponents.Panel();
+		private StockComponents.Display testDisplay = new StockComponents.Display();
 
 		public BaseForm( ) {
 			InitializeComponent();
@@ -48,6 +49,11 @@ namespace FormTest
 		private void MutualBtn_Click(object sender, EventArgs e) {
 			Console.WriteLine( "* Showing MUTUAL properties *" );
 			propertyGrid.SelectedObjects = new object[] { testBtn, testPanel };
+		}
+
+		private void DisplayBtn_Click(object sender, EventArgs e) {
+			Console.WriteLine( "* Showing DISPLAY properties *" );
+			propertyGrid.SelectedObject = testDisplay;
 		}
 	}
 }
