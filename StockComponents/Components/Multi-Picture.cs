@@ -17,6 +17,7 @@ namespace StockComponents
 			}
 		}
 
+		// Simulate List<T> behaviour
 		public void Add(Picture content) {
 			_MultiPicture.Add( content );
 		}
