@@ -20,9 +20,14 @@ namespace FormTest
 		private StockComponents.Button testBtn = new StockComponents.Button();
 		private StockComponents.Panel testPanel = new StockComponents.Panel();
 		private StockComponents.Display testDisplay = new StockComponents.Display();
+		private StockComponents.MultiPicture testMP = new StockComponents.MultiPicture();
 
 		public BaseForm( ) {
 			InitializeComponent();
+
+			testMP.Add( new Picture( "PICTURE1" ) );
+			testMP.Add( new Picture( "PICTURE2" ) );
+			testMP.Add( new Picture( "PICTURE3" ) );
 
 			propertyGrid.PropertySort = PropertySort.Alphabetical;
 			//propertyGrid.ToolbarVisible = false;
@@ -54,6 +59,11 @@ namespace FormTest
 		private void DisplayBtn_Click(object sender, EventArgs e) {
 			Console.WriteLine( "* Showing DISPLAY properties *" );
 			propertyGrid.SelectedObject = testDisplay;
+		}
+
+		private void MpBtn_Click(object sender, EventArgs e) {
+			Console.WriteLine( "* Showing MULTI-PICTURE properties *" );
+			propertyGrid.SelectedObject = testMP;
 		}
 	}
 }

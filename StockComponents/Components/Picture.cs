@@ -2,9 +2,13 @@ using BasicAttributes.Attributes;
 
 namespace StockComponents
 {
-	class Picture
+	public class Picture
 	{
-		private Common _Common;
+		public Picture(string name) {
+			this._Common.Name = name;
+		}
+		
+		private Common _Common = new Common();
 		public Common Common {
 			get {
 				return _Common;
@@ -14,7 +18,7 @@ namespace StockComponents
 			}
 		}
 
-		private Assistance _Assistance;
+		private Assistance _Assistance = new Assistance();
 		public Assistance Assistance {
 			get {
 				return _Assistance;
@@ -24,7 +28,7 @@ namespace StockComponents
 			}
 		}
 
-		private Image _Image;
+		private Image _Image = new Image();
 		public Image Image {
 			get {
 				return _Image;

@@ -4,7 +4,7 @@ namespace StockComponents
 {
 	class Label
 	{
-		private Common _Common;
+		private Common _Common = new Common();
 		public Common Common {
 			get {
 				return _Common;
@@ -14,7 +14,7 @@ namespace StockComponents
 			}
 		}
 
-		private Assistance _Assitance;
+		private Assistance _Assitance = new Assistance();
 		public Assistance Assitance {
 			get {
 				return _Assitance;
@@ -24,7 +24,7 @@ namespace StockComponents
 			}
 		}
 
-		private Text _Text;
+		private Text _Text = new Text();
 		public Text Text {
 			get {
 				return _Text;

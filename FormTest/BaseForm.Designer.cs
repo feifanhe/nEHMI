@@ -31,6 +31,7 @@ namespace FormTest
 			this.PanelBtn = new System.Windows.Forms.Button();
 			this.MutualBtn = new System.Windows.Forms.Button();
 			this.DisplayBtn = new System.Windows.Forms.Button();
+			this.MpBtn = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// propertyGrid
@@ -87,11 +88,23 @@ namespace FormTest
 			this.DisplayBtn.UseVisualStyleBackColor = true;
 			this.DisplayBtn.Click += new System.EventHandler( this.DisplayBtn_Click );
 			// 
+			// MpBtn
+			// 
+			this.MpBtn.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left ) ) );
+			this.MpBtn.Location = new System.Drawing.Point( 101, 298 );
+			this.MpBtn.Name = "MpBtn";
+			this.MpBtn.Size = new System.Drawing.Size( 75, 23 );
+			this.MpBtn.TabIndex = 5;
+			this.MpBtn.Text = "M. Pic Prop";
+			this.MpBtn.UseVisualStyleBackColor = true;
+			this.MpBtn.Click += new System.EventHandler( this.MpBtn_Click );
+			// 
 			// BaseForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size( 276, 358 );
+			this.Controls.Add( this.MpBtn );
 			this.Controls.Add( this.DisplayBtn );
 			this.Controls.Add( this.MutualBtn );
 			this.Controls.Add( this.PanelBtn );
@@ -110,6 +123,7 @@ namespace FormTest
 		private System.Windows.Forms.Button PanelBtn;
 		private System.Windows.Forms.Button MutualBtn;
 		private System.Windows.Forms.Button DisplayBtn;
+		private System.Windows.Forms.Button MpBtn;
 	}
 }
 
