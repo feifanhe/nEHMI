@@ -25,24 +25,16 @@ namespace FormTest
 		public BaseForm( ) {
 			InitializeComponent();
 
-			testMP.Items.Add<Picture>( new Picture( "PICTURE1" ) );
-			testMP.Items.Add<Picture>( new Picture( "PICTURE2" ) );
-			testMP.Items.Add<Picture>( new Picture( "PICTURE3" ) );
+			testMP.Items.Add( new Picture( "PICTURE1" ) );
+			testMP.Items.Add( new Picture( "PICTURE2" ) );
+			testMP.Items.Add( new Picture( "PICTURE3" ) );
 
-			testMP.template.Add( new Picture( "PICTURE1" ) );
-			testMP.template.Add( new Picture( "PICTURE2" ) );
-			testMP.template.Add( new Picture( "PICTURE3" ) );
+			//testMP.template.Add( new Picture( "PICTURE1" ) );
+			//testMP.template.Add( new Picture( "PICTURE2" ) );
+			//testMP.template.Add( new Picture( "PICTURE3" ) );
 
 			propertyGrid.PropertySort = PropertySort.Alphabetical;
 			//propertyGrid.ToolbarVisible = false;
-		}
-
-		private void propertyGrid_PropertyValueChanged(object s, PropertyValueChangedEventArgs e) {
-			//Console.WriteLine( "* PROPERTY VALUE CHANGED *" );
-
-			//testBtn.Properties = propertyGrid.SelectedObject as AttributesPacker;
-
-			//propertyGrid.Refresh();
 		}
 
 		private void ButtonBtn_Click(object sender, EventArgs e) {

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 
 using BasicAttributes.Helper;
+
 using System.Reflection;
 
 namespace BasicAttributes.Attributes
@@ -11,30 +12,17 @@ namespace BasicAttributes.Attributes
 	
 	public class Collection : CollectionBase, ICustomTypeDescriptor
 	{
-		private Type ContentType;
-		private object holder;
-
-		// Constructor for Collection class
-		public Collection(Type ContentType) {
-			this.ContentType = ContentType;
-
-			Type generic = typeof( List<> );
-			Type specific = generic.MakeGenericType( ContentType );
-			ConstructorInfo ci = specific.GetConstructor( Type.EmptyTypes );
-			holder = ci.Invoke( new object[] { } );
-		}
-
 		#region ICustomTypeDescriptor Members
+
+		public String GetClassName( ) {
+			return TypeDescriptor.GetClassName( this, true );
+		}
 
 		public AttributeCollection GetAttributes( ) {
 			return TypeDescriptor.GetAttributes( this, true );
 		}
 
-		public string GetClassName( ) {
-			return TypeDescriptor.GetClassName( this, true );
-		}
-
-		public string GetComponentName( ) {
+		public String GetComponentName( ) {
 			return TypeDescriptor.GetComponentName( this, true );
 		}
 
@@ -50,11 +38,11 @@ namespace BasicAttributes.Attributes
 			return TypeDescriptor.GetDefaultProperty( this, true );
 		}
 
-		public object GetEditor(System.Type editorBaseType) {
+		public object GetEditor(Type editorBaseType) {
 			return TypeDescriptor.GetEditor( this, editorBaseType, true );
 		}
 
-		public EventDescriptorCollection GetEvents(System.Attribute[] attributes) {
+		public EventDescriptorCollection GetEvents(Attribute[] attributes) {
 			return TypeDescriptor.GetEvents( this, attributes, true );
 		}
 
@@ -62,55 +50,44 @@ namespace BasicAttributes.Attributes
 			return TypeDescriptor.GetEvents( this, true );
 		}
 
-		public PropertyDescriptorCollection GetProperties(System.Attribute[] attributes) {
+		public object GetPropertyOwner(PropertyDescriptor pd) {
+			return this;
+		}
+
+		public PropertyDescriptorCollection GetProperties(Attribute[] attributes) {
 			return GetProperties();
 		}
 
 		public PropertyDescriptorCollection GetProperties( ) {
-			// Create a collection object to hold property descriptors
+			// Create a new collection object PropertyDescriptorCollection
 			PropertyDescriptorCollection pds = new PropertyDescriptorCollection( null );
 
-			// Iterate the list of employees
+			// Iterate the list of items
 			for( int i = 0; i < this.List.Count; i++ )
 			{
-				// Create a property descriptor for the employee item and add to the property descriptor collection
-				CustomeCollectionPropertyDescriptor pd = new CustomeCollectionPropertyDescriptor( this, i );
-				pds.Add( pd );
+				// For each employee create a property descriptor 
+				// and add it to the 
+				// PropertyDescriptorCollection instance
+				CollectionPropertyDescriptor cpd = new
+							  CollectionPropertyDescriptor( this, i );
+				pds.Add( cpd );
 			}
-			// return the property descriptor collection
 			return pds;
-		}
-
-		public object GetPropertyOwner(PropertyDescriptor pd) {
-			return this;
 		}
 
 		#endregion
 
 		#region CollectionBase Members
 
-		/// <summary>
-		/// Adds an employee object to the collection
-		/// </summary>
-		/// <param name="emp"></param>
-		public void Add<T>(T emp){
-			this.List.Add( emp );
+		public void Add(object Item) {
+			this.List.Add( Item );
 		}
-
-		/// <summary>
-		/// Removes an employee object from the collection
-		/// </summary>
-		/// <param name="emp"></param>
-		public void Remove<T>(T emp) {
-			this.List.Remove( emp );
+		public void Remove(object Item) {
+			this.List.Remove( Item );
 		}
-
-		/// <summary>
-		/// Returns an employee object at index position.
-		/// </summary>
 		public object this[ int index ] {
 			get {
-				return Convert.ChangeType(this.List[ index ], ContentType);
+				return this.List[ index ];
 			}
 		}
 

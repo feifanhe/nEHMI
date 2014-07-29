@@ -5,15 +5,15 @@ using BasicAttributes.Attributes;
 
 namespace BasicAttributes.Helper
 {
-	public class CustomeCollectionPropertyDescriptor : PropertyDescriptor
+	public class CollectionPropertyDescriptor : PropertyDescriptor
 	{
 		private Collection collection = null;
 		private int index = -1;
 
-		public CustomeCollectionPropertyDescriptor(Collection TargetItem, int index)
-			: base( "Item " + index.ToString(), null ) {
-			this.collection = TargetItem;
-			this.index = index;
+		public CollectionPropertyDescriptor(Collection coll, int idx)
+			: base( "#" + idx.ToString(), null ) {
+			this.collection = coll;
+			this.index = idx;
 		}
 
 		public override AttributeCollection Attributes {
@@ -32,13 +32,45 @@ namespace BasicAttributes.Helper
 			}
 		}
 
+		public override string DisplayName {
+			get {
+				object emp = this.collection[ index ];
+				return "OBJECT " + index.ToString();
+			}
+		}
+
+		public override string Description {
+			get {
+				//Employee emp = this.collection[ index ];
+				//StringBuilder sb = new StringBuilder();
+				//sb.Append( emp.LastName );
+				//sb.Append( "," );
+				//sb.Append( emp.FirstName );
+				//sb.Append( "," );
+				//sb.Append( emp.Age );
+				//sb.Append( " years old, working for " );
+				//sb.Append( emp.Department );
+				//sb.Append( " as " );
+				//sb.Append( emp.Role );
+
+				//return sb.ToString();
+				return "DESCRIPTION FOR OBJECT " + index.ToString();
+			}
+		}
+
 		public override object GetValue(object component) {
 			return this.collection[ index ];
 		}
 
 		public override bool IsReadOnly {
 			get {
-				return false;
+				return true;
+			}
+		}
+
+		public override string Name {
+			get {
+				return "#" + index.ToString();
 			}
 		}
 
@@ -51,17 +83,12 @@ namespace BasicAttributes.Helper
 		public override void ResetValue(object component) {
 		}
 
-		public override void SetValue(object component, object value) {
-		}
-
 		public override bool ShouldSerializeValue(object component) {
 			return true;
 		}
 
-		public override string Name {
-			get {
-				return "Item " + index.ToString();
-			}
+		public override void SetValue(object component, object value) {
+			// this.collection[index] = value;
 		}
 	}
 }

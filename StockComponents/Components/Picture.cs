@@ -4,7 +4,7 @@ using BasicAttributes.Attributes;
 
 namespace StockComponents
 {
-	[TypeConverter(typeof(ExpandableObjectConverter))]
+	[TypeConverter( typeof( ExpandableObjectConverter ) )]
 	public class Picture
 	{
 		public Picture(string name) {
@@ -21,15 +21,15 @@ namespace StockComponents
 			}
 		}
 
-		private Assistance _Assistance = new Assistance();
-		public Assistance Assistance {
-			get {
-				return _Assistance;
-			}
-			set {
-				_Assistance = value;
-			}
-		}
+		//private Assistance _Assistance = new Assistance();
+		//public Assistance Assistance {
+		//    get {
+		//        return _Assistance;
+		//    }
+		//    set {
+		//        _Assistance = value;
+		//    }
+		//}
 
 		private Image _Image = new Image();
 		public Image Image {
