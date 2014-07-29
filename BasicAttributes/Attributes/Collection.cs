@@ -8,8 +8,7 @@ using BasicAttributes.Helper;
 using System.Reflection;
 
 namespace BasicAttributes.Attributes
-{
-	
+{	
 	public class Collection : CollectionBase, ICustomTypeDescriptor
 	{
 		#region ICustomTypeDescriptor Members
@@ -92,5 +91,9 @@ namespace BasicAttributes.Attributes
 		}
 
 		#endregion
+
+		public override string ToString( ) {
+			return string.Empty;
+		}
 	}
 }

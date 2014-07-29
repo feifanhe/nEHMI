@@ -1,13 +1,15 @@
 using System.ComponentModel;
 
 using BasicAttributes.Attributes;
-using System.Collections.Generic;
+using BasicAttributes;
 
 namespace StockComponents
 {
 	public class MultiPicture
 	{
 		private Collection _Items = new Collection();
+		[Category("Multi-Picture")]
+		[Description("Expand the list to show all the items.")]
 		[TypeConverter(typeof(ExpandableObjectConverter))]
 		public Collection Items {
 			get {
@@ -15,11 +17,16 @@ namespace StockComponents
 			}
 		}
 
-		//private List<Picture> _template = new List<Picture>();
-		//public List<Picture> template {
-		//    get {
-		//        return _template;
-		//    }
-		//}
+		[Category( "Multi-Picture" )]
+		[Description( "Registry that claims which item is selected." )]
+		private Registry _Registry = new Registry();
+		public Registry Registry {
+			get {
+				return _Registry;
+			}
+			set {
+				_Registry = value;
+			}
+		}
 	}
 }

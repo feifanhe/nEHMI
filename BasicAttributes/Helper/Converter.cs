@@ -9,7 +9,7 @@ using BasicAttributes.Attributes;
 
 namespace BasicAttributes.Helper
 {
-	public class LanguageConverter : StringConverter
+	internal class LanguageConverter : StringConverter
 	{
 		public override bool GetStandardValuesSupported(ITypeDescriptorContext context) {
 			//true means show a combobox
@@ -26,7 +26,7 @@ namespace BasicAttributes.Helper
 		}
 	}
 
-	public class EnumDescriptionConverter : EnumConverter
+	internal class EnumDescriptionConverter : EnumConverter
 	{
 		private Type _enumType;
 
@@ -69,4 +69,6 @@ namespace BasicAttributes.Helper
 			return Enum.Parse( _enumType, (string)value );
 		}
 	}
+
+	
 }

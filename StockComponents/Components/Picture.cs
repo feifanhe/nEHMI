@@ -1,10 +1,11 @@
+using System;
 using System.ComponentModel;
 
 using BasicAttributes.Attributes;
 
 namespace StockComponents
 {
-	[TypeConverter( typeof( ExpandableObjectConverter ) )]
+	[TypeConverter( typeof( ItemConverter ) )]
 	public class Picture
 	{
 		public Picture(string name) {
@@ -39,6 +40,20 @@ namespace StockComponents
 			set {
 				_Image = value;
 			}
+		}
+	}
+
+	internal class ItemConverter : ExpandableObjectConverter
+	{
+		public override object ConvertTo(ITypeDescriptorContext context,
+							 System.Globalization.CultureInfo culture,
+							 object value, Type destType) {
+			if( destType == typeof( string ) && value is Picture )
+			{
+				Picture item = (Picture)value;
+				return item.Common.Name;
+			}
+			return base.ConvertTo( context, culture, value, destType );
 		}
 	}
 }

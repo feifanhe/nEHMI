@@ -1,9 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.ComponentModel;
 
 namespace BasicAttributes
 {
+	[TypeConverter( typeof( ExpandableObjectConverter ) )]
 	public class Registry
 	{
 		private Scope _Scope;
