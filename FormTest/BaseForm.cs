@@ -25,9 +25,13 @@ namespace FormTest
 		public BaseForm( ) {
 			InitializeComponent();
 
-			testMP.Add( new Picture( "PICTURE1" ) );
-			testMP.Add( new Picture( "PICTURE2" ) );
-			testMP.Add( new Picture( "PICTURE3" ) );
+			testMP.Items.Add<Picture>( new Picture( "PICTURE1" ) );
+			testMP.Items.Add<Picture>( new Picture( "PICTURE2" ) );
+			testMP.Items.Add<Picture>( new Picture( "PICTURE3" ) );
+
+			testMP.template.Add( new Picture( "PICTURE1" ) );
+			testMP.template.Add( new Picture( "PICTURE2" ) );
+			testMP.template.Add( new Picture( "PICTURE3" ) );
 
 			propertyGrid.PropertySort = PropertySort.Alphabetical;
 			//propertyGrid.ToolbarVisible = false;

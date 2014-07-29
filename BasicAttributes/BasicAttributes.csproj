@@ -36,10 +36,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\Assistance.cs" />
+    <Compile Include="Attributes\Collection.cs" />
     <Compile Include="Attributes\Common.cs">
     </Compile>
     <Compile Include="Attributes\Input.cs" />
-    <Compile Include="Attributes\List.cs" />
     <Compile Include="Attributes\Vision.cs" />
     <Compile Include="Details\Registry.cs" />
     <Compile Include="Attributes\Indicator.cs" />
@@ -49,6 +49,7 @@
     <Compile Include="Attributes\Image.cs" />
     <Compile Include="Details\Options.cs" />
     <Compile Include="Helper\CustomPropertyTab.cs" />
+    <Compile Include="Helper\Descriptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Attributes\Text.cs" />
   </ItemGroup>

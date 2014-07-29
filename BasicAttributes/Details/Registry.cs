@@ -17,10 +17,11 @@ namespace BasicAttributes
 
 		public string FullAddress {
 			get {
-				if( _MemoryType.IsBitOperable )
-					return _MemoryType.ToString() + _Address.ToString() + ( _Bit.ToString() ?? string.Empty );
-				else
-					return _MemoryType.ToString() + _Address.ToString();
+				return string.Empty;
+				//if( _MemoryType.IsBitOperable )
+				//    return _MemoryType.ToString() + _Address.ToString() + ( _Bit.ToString() ?? string.Empty );
+				//else
+				//    return _MemoryType.ToString() + _Address.ToString();
 			}
 			set {
 				//TODO: setter for full address

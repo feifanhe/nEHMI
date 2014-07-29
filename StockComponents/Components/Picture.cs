@@ -1,7 +1,10 @@
+using System.ComponentModel;
+
 using BasicAttributes.Attributes;
 
 namespace StockComponents
 {
+	[TypeConverter(typeof(ExpandableObjectConverter))]
 	public class Picture
 	{
 		public Picture(string name) {

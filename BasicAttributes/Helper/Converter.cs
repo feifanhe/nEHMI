@@ -5,6 +5,8 @@ using System.Reflection;
 using BasicAttributes.Details;
 using System.Globalization;
 
+using BasicAttributes.Attributes;
+
 namespace BasicAttributes.Helper
 {
 	public class LanguageConverter : StringConverter
@@ -65,6 +67,37 @@ namespace BasicAttributes.Helper
 					return Enum.Parse( _enumType, fi.Name );
 			}
 			return Enum.Parse( _enumType, (string)value );
+		}
+	}
+
+	//// This is a special type converter which will be associated with the Employee class.
+	//// It converts an Employee object to string representation for use in a property grid.
+	//public class CollectionItemsConverter : ExpandableObjectConverter
+	//{
+	//    public override object ConvertTo(ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destType) {
+	//        if( destType == typeof( string ) && value is Employee )
+	//        {
+	//            // Cast the value to an Employee type
+	//            Employee emp = (Employee)value;
+
+	//            // Return department and department role separated by comma.
+	//            return emp.Department + ", " + emp.Role;
+	//        }
+	//        return base.ConvertTo( context, culture, value, destType );
+	//    }
+	//}
+
+	// This is a special type converter which will be associated with the EmployeeCollection class.
+	// It converts an EmployeeCollection object to a string representation for use in a property grid.
+	public class CollectionConverter : ExpandableObjectConverter
+	{
+		public override object ConvertTo(ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destType) {
+			if( destType == typeof( string ) && value is Collection )
+			{
+				// Return department and department role separated by comma.
+				return "CUSTOME COLLECTION";
+			}
+			return base.ConvertTo( context, culture, value, destType );
 		}
 	}
 }

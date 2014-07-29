@@ -1,37 +1,24 @@
-using System;
+using System.ComponentModel;
+
+using BasicAttributes.Attributes;
 using System.Collections.Generic;
-using System.Text;
 
 namespace StockComponents
 {
 	public class MultiPicture
 	{
-		private static List<Picture> _MultiPicture = new List<Picture>();
-
-		public List<Picture> Items {
+		private Collection _Items = new Collection( typeof( Picture ) );
+		[TypeConverter(typeof(CollectionConverter))]
+		public Collection Items {
 			get {
-				return _MultiPicture;
-			}
-			set {
-				_MultiPicture = value;
+				return _Items;
 			}
 		}
 
-		// Simulate List<T> behaviour
-		public void Add(Picture content) {
-			_MultiPicture.Add( content );
-		}
-
-		public void Remove(Picture content) {
-			_MultiPicture.Remove( content );
-		}
-
-		public Picture this[ int index ] {
+		private List<Picture> _template = new List<Picture>();
+		public List<Picture> template {
 			get {
-				return _MultiPicture[ index ];
-			}
-			set {
-				_MultiPicture[ index ] = value;
+				return _template;
 			}
 		}
 	}
