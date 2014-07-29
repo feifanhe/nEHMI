@@ -7,36 +7,39 @@ namespace BasicAttributes
 	{
 		private Scope _Scope;
 		private MemoryType _MemoryType;
-		private int _Address;
-		private int _Bit;
+		private string _Address = string.Empty;
+		private string _Bit = string.Empty;
 
 		public override string ToString( ) {
 			return FullAddress;
 		}
 
-		public string FullAddress {
+		[Browsable(false)]
+		public string FullAddress { // TODO: for TypeConverter
 			get {
-				return string.Empty;
-				//if( _MemoryType.IsBitOperable )
-				//    return _MemoryType.ToString() + _Address.ToString() + ( _Bit.ToString() ?? string.Empty );
-				//else
-				//    return _MemoryType.ToString() + _Address.ToString();
+				// Parameter not settled
+				if( _Address == string.Empty )
+					return _Address;
+
+				return _MemoryType.ToString() + _Address + ( ( _MemoryType.IsBitOperable ) ? _Bit : string.Empty );
 			}
 			set {
 				//TODO: setter for full address
 			}
 		}
 
-		public MemoryType MemoryType {
+		public string MemoryType {
 			get {
-				return _MemoryType;
+				if( _MemoryType == null )
+					return string.Empty;
+				return _MemoryType.ToString();
 			}
 			set {
-				_MemoryType = value;
+				_MemoryType = (MemoryType)value;
 			}
 		}
 
-		public int Address {
+		public string Address {
 			get {
 				return _Address;
 			}
@@ -45,7 +48,7 @@ namespace BasicAttributes
 			}
 		}
 
-		public int Bit {
+		public string Bit {
 			get {
 				return _Bit;
 			}

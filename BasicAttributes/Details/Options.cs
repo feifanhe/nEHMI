@@ -117,6 +117,8 @@ namespace BasicAttributes
 			this._Type = Type;
 			this._Scope = Scope;
 			this._BitOperable = BitOperable;
+
+			instance[ Type ] = this;
 		}
 
 		public override String ToString( ) {
@@ -131,6 +133,17 @@ namespace BasicAttributes
 			get {
 				return _BitOperable;
 			}
+		}
+
+		private static readonly Dictionary<string, MemoryType> instance = new Dictionary<string, MemoryType>();
+
+		//TODO: problems here, type initialize failed
+		public static explicit operator MemoryType(string str) {
+			MemoryType result;
+			if( instance.TryGetValue( str, out result ) )
+				return result;
+			else
+				throw new InvalidCastException();
 		}
 	}
 

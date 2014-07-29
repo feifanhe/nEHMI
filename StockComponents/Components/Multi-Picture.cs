@@ -17,9 +17,9 @@ namespace StockComponents
 			}
 		}
 
+		private Registry _Registry = new Registry();
 		[Category( "Multi-Picture" )]
 		[Description( "Registry that claims which item is selected." )]
-		private Registry _Registry = new Registry();
 		public Registry Registry {
 			get {
 				return _Registry;
