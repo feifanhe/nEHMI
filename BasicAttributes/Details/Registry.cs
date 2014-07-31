@@ -14,17 +14,20 @@ namespace BasicAttributes
 			return FullAddress;
 		}
 
-		[Browsable(false)]
-		public string FullAddress { // TODO: for TypeConverter
+		private string FullAddress { // TODO: for TypeConverter
 			get {
 				// Parameter not settled
 				if( _Address == string.Empty )
 					return _Address;
 
-				return _MemoryType.ToString() + _Address + ( ( _MemoryType.IsBitOperable ) ? _Bit : string.Empty );
+				return _MemoryType.ToString() + _Address + ( ( _MemoryType.IsBitOperable ) ? ( "." + _Bit ) : string.Empty );
 			}
 			set {
-				//TODO: setter for full address
+				_MemoryType = (MemoryType)(value.ToCharArray()[ 0 ].ToString());
+
+				string[] SplitNumericAddress = value.Substring(1).Split( '.');
+				_Address = SplitNumericAddress[ 0 ];
+				_Bit = SplitNumericAddress[ 1 ];
 			}
 		}
 

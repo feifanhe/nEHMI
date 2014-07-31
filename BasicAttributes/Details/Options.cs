@@ -139,10 +139,10 @@ namespace BasicAttributes
 		}
 
 		//TODO: problems here, type initialize failed
-		public static explicit operator MemoryType(string str) {
+		public static explicit operator MemoryType(string Input) {
 			Console.WriteLine( "* START EXPLICIT TYPE CONVERSION *" );
 			MemoryType result;
-			if( instance.TryGetValue( str, out result ) )
+			if( instance.TryGetValue( Input.ToUpper(), out result ) )
 				return result;
 			else
 				throw new InvalidCastException();
