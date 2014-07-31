@@ -1,13 +1,13 @@
 using System.ComponentModel;
 
-using BasicAttributes.Attributes;
 using BasicAttributes;
+using BasicAttributes.Attributes;
 
 namespace StockComponents
 {
-	public class MultiPicture
+	public class MultiText
 	{
-		private Collection _Items = new Collection(typeof(Picture));
+		private Collection _Items = new Collection( typeof( Label ) );
 		public Collection Items {
 			get {
 				return _Items;

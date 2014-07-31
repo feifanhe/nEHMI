@@ -35,6 +35,36 @@ namespace StockComponents
 			}
 		}
 
+		private ButtonDetail _ButtonDetail = new ButtonDetail();
+		public ButtonDetail Detail {
+			get {
+				return _ButtonDetail;
+			}
+			set {
+				_ButtonDetail = value;
+			}
+		}
+
+		private Advance _Advance = new Advance();
+		public Advance Advance {
+			get {
+				return _Advance;
+			}
+			set {
+				_Advance = value;
+			}
+		}
+
+		private Actions _Actions = new Actions();
+		public Actions Actions {
+			get {
+				return _Actions;
+			}
+			set {
+				_Actions = value;
+			}
+		}
+
 		//public AttributesPacker Properties {
 		//    get {
 		//        packed.Clear();

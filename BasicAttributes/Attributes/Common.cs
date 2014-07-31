@@ -1,6 +1,8 @@
 using System.Drawing;
 using System.ComponentModel;
 
+using BasicAttributes.Helper;
+
 namespace BasicAttributes.Attributes
 {
 	[TypeConverter( typeof( ExpandableObjectConverter ) )]
@@ -104,29 +106,43 @@ namespace BasicAttributes.Attributes
 			}
 		}
 
-		private Size _Size = new Size();
+		private Dimension _Dimension = new Dimension();
 		[Category( "Common" )]
 		[Description( "The size of component in pixels." )]
 		[TypeConverter( typeof( ExpandableObjectConverter ) )]
-		public Size Dimension {
+		public Dimension Dimension {
 			get {
-				return _Size;
+				return _Dimension;
 			}
 			set {
-				_Size = value;
+				_Dimension = value;
 			}
 		}
 
-		private Location _Location = new Location();
+		private Position _Position = new Position();
 		[Category( "Common" )]
 		[Description( "Position of the top-left corner of the component with respect to the entire view." )]
 		[TypeConverter( typeof( ExpandableObjectConverter ) )]
-		public Location Position {
+		public Position Position {
 			get {
-				return _Location;
+				return _Position;
 			}
 			set {
-				_Location = value;
+				_Position = value;
+			}
+		}
+
+		private BorderStyle _BorderStyle = BorderStyle.WithoutBorder;
+		[Category("Common")]
+		[Description("The visibility of the border.")]
+		[DefaultValue(BorderStyle.WithoutBorder)]
+		[TypeConverter(typeof(EnumDescriptionConverter))]
+		public BorderStyle BorderStyle {
+			get {
+				return _BorderStyle;
+			}
+			set {
+				_BorderStyle = value;
 			}
 		}
 
@@ -135,7 +151,7 @@ namespace BasicAttributes.Attributes
 		}
 	}
 
-	public class Size
+	public class Dimension
 	{
 		private int _Height = 0;
 		[DefaultValue( 0 )]
@@ -166,7 +182,7 @@ namespace BasicAttributes.Attributes
 		}
 	}
 
-	public class Location
+	public class Position
 	{
 		private int _X = 0;
 		[DefaultValue( 0 )]
@@ -193,7 +209,6 @@ namespace BasicAttributes.Attributes
 		}
 
 		private bool _Lock = false;
-		[Category( "Common" )]
 		[Description( "Lock the component to avoid relative movements between components." )]
 		[DefaultValue( false )]
 		public bool Lock {

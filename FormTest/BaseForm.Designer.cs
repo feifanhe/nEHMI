@@ -32,6 +32,8 @@ namespace FormTest
 			this.MutualBtn = new System.Windows.Forms.Button();
 			this.DisplayBtn = new System.Windows.Forms.Button();
 			this.MpBtn = new System.Windows.Forms.Button();
+			this.MTBtn = new System.Windows.Forms.Button();
+			this.MeterBtn = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// propertyGrid
@@ -46,7 +48,7 @@ namespace FormTest
 			// ButtonBtn
 			// 
 			this.ButtonBtn.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left ) ) );
-			this.ButtonBtn.Location = new System.Drawing.Point( 13, 327 );
+			this.ButtonBtn.Location = new System.Drawing.Point( 13, 346 );
 			this.ButtonBtn.Name = "ButtonBtn";
 			this.ButtonBtn.Size = new System.Drawing.Size( 75, 23 );
 			this.ButtonBtn.TabIndex = 1;
@@ -57,7 +59,7 @@ namespace FormTest
 			// PanelBtn
 			// 
 			this.PanelBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.PanelBtn.Location = new System.Drawing.Point( 101, 327 );
+			this.PanelBtn.Location = new System.Drawing.Point( 101, 346 );
 			this.PanelBtn.Name = "PanelBtn";
 			this.PanelBtn.Size = new System.Drawing.Size( 75, 23 );
 			this.PanelBtn.TabIndex = 2;
@@ -68,7 +70,7 @@ namespace FormTest
 			// MutualBtn
 			// 
 			this.MutualBtn.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right ) ) );
-			this.MutualBtn.Location = new System.Drawing.Point( 189, 327 );
+			this.MutualBtn.Location = new System.Drawing.Point( 189, 346 );
 			this.MutualBtn.Name = "MutualBtn";
 			this.MutualBtn.Size = new System.Drawing.Size( 75, 23 );
 			this.MutualBtn.TabIndex = 3;
@@ -79,7 +81,7 @@ namespace FormTest
 			// DisplayBtn
 			// 
 			this.DisplayBtn.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left ) ) );
-			this.DisplayBtn.Location = new System.Drawing.Point( 12, 298 );
+			this.DisplayBtn.Location = new System.Drawing.Point( 12, 317 );
 			this.DisplayBtn.Name = "DisplayBtn";
 			this.DisplayBtn.Size = new System.Drawing.Size( 75, 23 );
 			this.DisplayBtn.TabIndex = 4;
@@ -90,7 +92,7 @@ namespace FormTest
 			// MpBtn
 			// 
 			this.MpBtn.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left ) ) );
-			this.MpBtn.Location = new System.Drawing.Point( 101, 298 );
+			this.MpBtn.Location = new System.Drawing.Point( 101, 317 );
 			this.MpBtn.Name = "MpBtn";
 			this.MpBtn.Size = new System.Drawing.Size( 75, 23 );
 			this.MpBtn.TabIndex = 5;
@@ -98,11 +100,35 @@ namespace FormTest
 			this.MpBtn.UseVisualStyleBackColor = true;
 			this.MpBtn.Click += new System.EventHandler( this.MpBtn_Click );
 			// 
+			// MTBtn
+			// 
+			this.MTBtn.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left ) ) );
+			this.MTBtn.Location = new System.Drawing.Point( 189, 317 );
+			this.MTBtn.Name = "MTBtn";
+			this.MTBtn.Size = new System.Drawing.Size( 75, 23 );
+			this.MTBtn.TabIndex = 6;
+			this.MTBtn.Text = "M. Txt Prop";
+			this.MTBtn.UseVisualStyleBackColor = true;
+			this.MTBtn.Click += new System.EventHandler( this.MTBtn_Click );
+			// 
+			// MeterBtn
+			// 
+			this.MeterBtn.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left ) ) );
+			this.MeterBtn.Location = new System.Drawing.Point( 13, 288 );
+			this.MeterBtn.Name = "MeterBtn";
+			this.MeterBtn.Size = new System.Drawing.Size( 75, 23 );
+			this.MeterBtn.TabIndex = 7;
+			this.MeterBtn.Text = "Meter Prop";
+			this.MeterBtn.UseVisualStyleBackColor = true;
+			this.MeterBtn.Click += new System.EventHandler( this.MeterBtn_Click );
+			// 
 			// BaseForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size( 276, 358 );
+			this.ClientSize = new System.Drawing.Size( 276, 377 );
+			this.Controls.Add( this.MeterBtn );
+			this.Controls.Add( this.MTBtn );
 			this.Controls.Add( this.MpBtn );
 			this.Controls.Add( this.DisplayBtn );
 			this.Controls.Add( this.MutualBtn );
@@ -123,6 +149,8 @@ namespace FormTest
 		private System.Windows.Forms.Button MutualBtn;
 		private System.Windows.Forms.Button DisplayBtn;
 		private System.Windows.Forms.Button MpBtn;
+		private System.Windows.Forms.Button MTBtn;
+		private System.Windows.Forms.Button MeterBtn;
 	}
 }
 

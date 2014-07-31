@@ -2,10 +2,11 @@ using System.ComponentModel;
 
 namespace BasicAttributes.Attributes
 {
-	class Input
+	[TypeConverter( typeof( ExpandableObjectConverter ) )]
+	public class InputDetail
 	{
 		private Format _Format;
-		[Category("Input")]
+		[Category("Input Detail")]
 		[Description("The represent format of the numbers in registry.")]
 		public Format Format {
 			get {
@@ -17,7 +18,7 @@ namespace BasicAttributes.Attributes
 		}
 
 		private Registry _StorageRegistry;
-		[Category( "Input" )]
+		[Category( "Input Detail" )]
 		[Description( "The registry that will handle the input value." )]
 		public Registry StorageRegistry {
 			get {
@@ -29,7 +30,7 @@ namespace BasicAttributes.Attributes
 		}
 
 		private string _MacroAddress;
-		[Category( "Input" )]
+		[Category( "Input Detail" )]
 		[Description( "The address of the MACRO." )]
 		public string MacroAddress {
 			get {
@@ -41,7 +42,7 @@ namespace BasicAttributes.Attributes
 		}
 
 		private bool _StoreRPermanently;
-		[Category( "Input" )]
+		[Category( "Input Detail" )]
 		[Description( "Checked to move the designated R registry to a permanent registry." )]
 		public bool StoreRPermanently {
 			get {
@@ -53,7 +54,7 @@ namespace BasicAttributes.Attributes
 		}
 
 		private Registry _PermanentRegistry;
-		[Category( "Input" )]
+		[Category( "Input Detail" )]
 		[Description( "Permanent registry for the desired R registry." )]
 		public Registry PermanentRegistry {
 			get {
@@ -65,7 +66,7 @@ namespace BasicAttributes.Attributes
 		}
 
 		private bool _AllowEmptyString;
-		[Category( "Input" )]
+		[Category( "Input Detail" )]
 		[Description( "Checked to accept empty string from the input." )]
 		public bool AllowEmptyString {
 			get {
@@ -77,7 +78,7 @@ namespace BasicAttributes.Attributes
 		}
 
 		private bool _AllowInput;
-		[Category( "Input" )]
+		[Category( "Input Detail" )]
 		[Description( "Checked to allow user input." )]
 		public bool AllowInput {
 			get {
@@ -89,7 +90,7 @@ namespace BasicAttributes.Attributes
 		}
 
 		private string _AllowCondition;
-		[Category( "Input" )]
+		[Category( "Input Detail" )]
 		[Description( "Describe the condition that will allow the user to input." )]
 		[TypeConverter( typeof( ExpandableObjectConverter ) )]
 		public string AllowCondition {
@@ -102,7 +103,7 @@ namespace BasicAttributes.Attributes
 		}
 
 		private InputRange _InputRange;
-		[Category( "Input" )]
+		[Category( "Input Detail" )]
 		[Description( "Input range in metric units." )]
 		[TypeConverter( typeof( ExpandableObjectConverter ) )]
 		public InputRange InputRange {
@@ -115,7 +116,7 @@ namespace BasicAttributes.Attributes
 		}
 
 		private InputRange _InputRangeInch;
-		[Category( "Input" )]
+		[Category( "Input Detail" )]
 		[Description( "Input range in imperial units." )]
 		public InputRange InputRangeInch {
 			get {
@@ -124,6 +125,10 @@ namespace BasicAttributes.Attributes
 			set {
 				_InputRangeInch = value;
 			}
+		}
+
+		public override string ToString( ) {
+			return string.Empty;
 		}
 	}
 

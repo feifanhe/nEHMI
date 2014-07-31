@@ -36,11 +36,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\Button.cs" />
+    <Compile Include="Components\CheckBox.cs" />
+    <Compile Include="Components\DropdownMenu.cs" />
+    <Compile Include="Components\InputLine.cs" />
+    <Compile Include="Components\CoordinateBox.cs" />
     <Compile Include="Components\Display.cs" />
+    <Compile Include="Components\Input.cs" />
     <Compile Include="Components\Label.cs" />
+    <Compile Include="Components\Meter.cs" />
     <Compile Include="Components\Multi-Picture.cs" />
     <Compile Include="Components\Panel.cs" />
     <Compile Include="Components\Picture.cs" />
+    <Compile Include="Components\Multi-Text.cs" />
+    <Compile Include="Components\RadioBox.cs" />
+    <Compile Include="Components\Vision.cs" />
+    <Compile Include="Helper\Converter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

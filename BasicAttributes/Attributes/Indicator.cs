@@ -7,9 +7,10 @@ namespace BasicAttributes.Attributes
 	[TypeConverter( typeof( ExpandableObjectConverter ) )]
 	public class Indicator
 	{
-		private Format _Format;
+		private Format _Format = Format.STR;
 		[Category( "Display" )]
 		[Description( "The represent format of the numbers in registry." )]
+		[DefaultValue(Format.STR)]
 		[TypeConverter( typeof( EnumDescriptionConverter ) )]
 		public Format Format {
 			get {
@@ -20,7 +21,7 @@ namespace BasicAttributes.Attributes
 			}
 		}
 
-		private Registry _SourceRegistry;
+		private Registry _SourceRegistry = new Registry();
 		[Category( "Display" )]
 		[Description( "The registry that defined the display contents." )]
 		public Registry SourceRegistry {

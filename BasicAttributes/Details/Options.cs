@@ -30,6 +30,24 @@ namespace BasicAttributes
 		Tag
 	}
 
+	public enum ButtonShape
+	{
+		Rectangle,
+		Ellipse
+	}
+
+	public enum MeterStyle
+	{
+		[Description("Semi-Circle")]
+		SemiCircle,
+		[Description("Full Circle")]
+		FullCicrle,
+		[Description("Strop")]
+		Strip,
+		[Description("Column")]
+		Column
+	}
+
 	public enum Format
 	{
 		[Description( "Long" )]
@@ -86,6 +104,20 @@ namespace BasicAttributes
 		F_3
 	}
 
+	public enum CoordinateType
+	{
+		[Description("Machine")]
+		Machine = 0,
+		[Description("Relative")]
+		Relative = 1,
+		[Description("Absolute")]
+		Absolute = 2,
+		[Description("Dist. To Go")] //TODO: Stupid naming.. why not Distance Left?
+		DistanceLeft = 3,
+		[Description("Simulate")]
+		Simulate = 11
+	}
+
 	public enum Scope
 	{
 		General,
@@ -138,7 +170,7 @@ namespace BasicAttributes
 			}
 		}
 
-		//TODO: problems here, type initialize failed
+		// For explicit type conversion
 		public static explicit operator MemoryType(string Input) {
 			Console.WriteLine( "* START EXPLICIT TYPE CONVERSION *" );
 			MemoryType result;

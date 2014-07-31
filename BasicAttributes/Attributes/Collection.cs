@@ -8,9 +8,18 @@ using BasicAttributes.Helper;
 using System.Reflection;
 
 namespace BasicAttributes.Attributes
-{	
+{
+	[Category("Collection")]
+	[Description( "Expand the list to show all the items." )]
+	[TypeConverter( typeof( ExpandableObjectConverter ) )]
 	public class Collection : CollectionBase, ICustomTypeDescriptor
 	{
+		private Type _ContentType;
+
+		public Collection(Type ContentType) {
+			this._ContentType = ContentType;
+		}
+
 		#region ICustomTypeDescriptor Members
 
 		public String GetClassName( ) {
@@ -58,7 +67,7 @@ namespace BasicAttributes.Attributes
 		}
 
 		public PropertyDescriptorCollection GetProperties( ) {
-			// Create a new collection object PropertyDescriptorCollection
+			// Create a new DummyCollection object PropertyDescriptorCollection
 			PropertyDescriptorCollection pds = new PropertyDescriptorCollection( null );
 
 			// Iterate the list of items
@@ -78,12 +87,26 @@ namespace BasicAttributes.Attributes
 
 		#region CollectionBase Members
 
-		public void Add(object Item) {
-			this.List.Add( Item );
+		//public void Add(object Item) {
+		//    this.List.Add( Item );
+		//}
+		public void Add(string ItemName) {
+			this.List.Add( Activator.CreateInstance(_ContentType, new object[]{ ItemName}));
 		}
 		public void Remove(object Item) {
 			this.List.Remove( Item );
 		}
+		//public void Remove(string ItemName) {
+		//    for( int i = 0; i < this.List.Count; i++ )
+		//    {
+		//        if( Convert.ChangeType(this.List[ i ], _ContentType).Common.Name == ItemName )
+		//        {
+		//            this.List.RemoveAt( i );
+		//            return;
+		//        }
+		//    }
+		//    //this.List.Remove( Activator.CreateInstance( _ContentType, new object[] { ItemName } ) );
+		//}
 		public object this[ int index ] {
 			get {
 				return this.List[ index ];

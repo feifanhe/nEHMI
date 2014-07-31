@@ -1,9 +1,17 @@
+using System.ComponentModel;
+
 using BasicAttributes.Attributes;
+using StockComponents.Helper;
 
 namespace StockComponents
 {
-	class Label
+	[TypeConverter( typeof( ItemConverter ) )]
+	public class Label
 	{
+		public Label(string name) {
+			this._Common.Name = name;
+		}
+		
 		private Common _Common = new Common();
 		public Common Common {
 			get {

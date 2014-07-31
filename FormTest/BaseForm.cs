@@ -21,13 +21,23 @@ namespace FormTest
 		private StockComponents.Panel testPanel = new StockComponents.Panel();
 		private StockComponents.Display testDisplay = new StockComponents.Display();
 		private StockComponents.MultiPicture testMP = new StockComponents.MultiPicture();
+		private StockComponents.MultiText testMT = new StockComponents.MultiText();
+		private StockComponents.Meter testMeter = new StockComponents.Meter();
 
 		public BaseForm( ) {
 			InitializeComponent();
 
-			testMP.Items.Add( new Picture( "PICTURE1" ) );
-			testMP.Items.Add( new Picture( "PICTURE2" ) );
-			testMP.Items.Add( new Picture( "PICTURE3" ) );
+			//testMP.Items.Add( new Picture( "PICTURE1" ) );
+			//testMP.Items.Add( new Picture( "PICTURE2" ) );
+			//testMP.Items.Add( new Picture( "PICTURE3" ) );
+
+			testMP.Items.Add( "PICTURE1 NAME" );
+			testMP.Items.Add( "PICTURE2 NAME" );
+			testMP.Items.Remove( testMP.Items[0] );
+
+			testMT.Items.Add( "TEXT1 NAME" );
+			testMT.Items.Add( "TEXT2 NAME" );
+			testMT.Items.Remove( testMT.Items[ 0 ] );
 
 			//testMP.template.Add( new Picture( "PICTURE1" ) );
 			//testMP.template.Add( new Picture( "PICTURE2" ) );
@@ -60,6 +70,17 @@ namespace FormTest
 		private void MpBtn_Click(object sender, EventArgs e) {
 			Console.WriteLine( "* Showing MULTI-PICTURE properties *" );
 			propertyGrid.SelectedObject = testMP;
+		}
+
+		private void MTBtn_Click(object sender, EventArgs e) {
+			Console.WriteLine( "* Showing MULTI-TEXT properties *" );
+			propertyGrid.SelectedObject = testMT;
+		}
+
+		private void MeterBtn_Click(object sender, EventArgs e) {
+			Console.WriteLine( "* Showing METER properties *" );
+			propertyGrid.SelectedObject = testMeter;
+
 		}
 	}
 }

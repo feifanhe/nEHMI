@@ -31,7 +31,7 @@ namespace BasicAttributes.Helper
 			//    propList.Add( new VertexPropertyDescriptor( this, i ) );
 			//}
 
-			// return the collection of PropertyDescriptors.
+			// return the DummyCollection of PropertyDescriptors.
 			PropertyDescriptor[] props = (PropertyDescriptor[])propList.ToArray( typeof( PropertyDescriptor ) );
 			return new PropertyDescriptorCollection( props );
 		

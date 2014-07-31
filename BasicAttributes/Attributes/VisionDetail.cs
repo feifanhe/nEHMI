@@ -2,10 +2,11 @@ using System.ComponentModel;
 
 namespace BasicAttributes.Attributes
 {
-	public class Vision
+	[TypeConverter( typeof( ExpandableObjectConverter ) )]
+	public class VisionDetail
 	{
 		private int _CameraID;
-		[Category("Vision")]
+		[Category("Vision Detail")]
 		[Description("ID of the designated camera.")]
 		public int CameraID {
 			get {
@@ -14,6 +15,10 @@ namespace BasicAttributes.Attributes
 			set {
 				_CameraID = value;
 			}
+		}
+
+		public override string ToString( ) {
+			return string.Empty;
 		}
 	}
 }

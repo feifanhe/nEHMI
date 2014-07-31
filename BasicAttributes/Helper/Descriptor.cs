@@ -7,13 +7,15 @@ namespace BasicAttributes.Helper
 {
 	public class CollectionPropertyDescriptor : PropertyDescriptor
 	{
-		private Collection collection = null;
-		private int index = -1;
+		private Collection DummyCollection = null;
+		private int Index = -1;
+		object SelectedItem;
 
-		public CollectionPropertyDescriptor(Collection coll, int idx)
-			: base( "#" + idx.ToString(), null ) {
-			this.collection = coll;
-			this.index = idx;
+		public CollectionPropertyDescriptor(Collection InputCollection, int Index)
+			: base( "#" + Index.ToString(), null ) {
+			this.DummyCollection = InputCollection;
+			this.Index = Index;
+			this.SelectedItem = this.DummyCollection[ Index ];
 		}
 
 		public override AttributeCollection Attributes {
@@ -28,38 +30,18 @@ namespace BasicAttributes.Helper
 
 		public override Type ComponentType {
 			get {
-				return this.collection.GetType();
+				return SelectedItem.GetType();
 			}
 		}
 
 		public override string DisplayName {
 			get {
-				object emp = this.collection[ index ];
-				return "OBJECT " + index.ToString();
-			}
-		}
-
-		public override string Description {
-			get {
-				//Employee emp = this.collection[ index ];
-				//StringBuilder sb = new StringBuilder();
-				//sb.Append( emp.LastName );
-				//sb.Append( "," );
-				//sb.Append( emp.FirstName );
-				//sb.Append( "," );
-				//sb.Append( emp.Age );
-				//sb.Append( " years old, working for " );
-				//sb.Append( emp.Department );
-				//sb.Append( " as " );
-				//sb.Append( emp.Role );
-
-				//return sb.ToString();
-				return "DESCRIPTION FOR OBJECT " + index.ToString();
+				return ComponentType.Name + " " + ( Index + 1 ).ToString();
 			}
 		}
 
 		public override object GetValue(object component) {
-			return this.collection[ index ];
+			return SelectedItem;
 		}
 
 		public override bool IsReadOnly {
@@ -70,13 +52,13 @@ namespace BasicAttributes.Helper
 
 		public override string Name {
 			get {
-				return "#" + index.ToString();
+				return "#" + Index.ToString();
 			}
 		}
 
 		public override Type PropertyType {
 			get {
-				return this.collection[ index ].GetType();
+				return this.DummyCollection[ Index ].GetType();
 			}
 		}
 
@@ -88,7 +70,7 @@ namespace BasicAttributes.Helper
 		}
 
 		public override void SetValue(object component, object value) {
-			// this.collection[index] = value;
+			// this.DummyCollection[Index] = value;
 		}
 	}
 }

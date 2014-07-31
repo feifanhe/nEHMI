@@ -35,12 +35,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\Actions.cs" />
+    <Compile Include="Attributes\Advance.cs" />
     <Compile Include="Attributes\Assistance.cs" />
+    <Compile Include="Attributes\ButtonDetail.cs" />
     <Compile Include="Attributes\Collection.cs" />
     <Compile Include="Attributes\Common.cs">
     </Compile>
-    <Compile Include="Attributes\Input.cs" />
-    <Compile Include="Attributes\Vision.cs" />
+    <Compile Include="Attributes\CoordinateDetail.cs" />
+    <Compile Include="Attributes\InputDetail.cs" />
+    <Compile Include="Attributes\MeterDetail.cs" />
+    <Compile Include="Attributes\VisionDetail.cs" />
     <Compile Include="Details\Registry.cs" />
     <Compile Include="Attributes\Indicator.cs" />
     <Compile Include="Helper\Converter.cs" />

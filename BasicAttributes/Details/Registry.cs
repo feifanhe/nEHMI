@@ -2,10 +2,12 @@ using System.ComponentModel;
 
 namespace BasicAttributes
 {
+	[Category("Registry")]
+	[Description( "Registry that claims which item is selected." )]
 	[TypeConverter( typeof( ExpandableObjectConverter ) )]
 	public class Registry
 	{
-		private Scope _Scope;
+		//private Scope _Scope;
 		private MemoryType _MemoryType;
 		private string _Address = string.Empty;
 		private string _Bit = string.Empty;

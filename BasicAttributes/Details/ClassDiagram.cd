@@ -26,7 +26,7 @@
     <Position X="0.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <FileName>Attributes\Common.cs</FileName>
-      <HashCode>CEAAAEAgBAQCACClAAAAIAaCCAAAQAAAAAAABAAAAAA=</HashCode>
+      <HashCode>CEAAAEAABAQCCCClAAAEoAaCCAAAwAAAAAAABAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="BasicAttributes.Details.Multilingual">
@@ -47,29 +47,50 @@
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <FileName>Details\Options.cs</FileName>
-      <HashCode>gAAAAAAAAAAAAAAEAAIAAAAgAAAAAAAAAABApK7IBQA=</HashCode>
+      <HashCode>gAAABAAAAAAAAAAEAAIAAAAgAABAAAAAAABApK7IBQA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="BasicAttributes.Attributes.Location">
+  <Class Name="BasicAttributes.Attributes.SelectionPack">
     <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <FileName>Attributes\Common.cs</FileName>
-      <HashCode>AAAQAAAAIAAAAAAEAAAAAAAAAAQAAAAAAAAAAAAAYCA=</HashCode>
+      <FileName>Attributes\Actions.cs</FileName>
+      <NewMemberFileName>Attributes\Common.cs</NewMemberFileName>
+      <HashCode>AAQAAAQAIAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="BasicAttributes.Attributes.InputRange">
     <Position X="5.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <FileName>Attributes\Input.cs</FileName>
-      <NewMemberFileName>Attributes\Common.cs</NewMemberFileName>
+      <FileName>Attributes\InputDetail.cs</FileName>
       <HashCode>gAAAIACAAAAAAAAEAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="BasicAttributes.Attributes.Input">
+  <Class Name="BasicAttributes.Attributes.InputDetail">
     <Position X="9.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <FileName>Attributes\Input.cs</FileName>
-      <HashCode>BAIAAgAABAACQgAAAQACACAAFEgAgAACAAABAAAAGIA=</HashCode>
+      <FileName>Attributes\InputDetail.cs</FileName>
+      <HashCode>BAIAAgAABAACQgAEAQACACAAFEgAgAACAAABAAAAGIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicAttributes.Attributes.CoordinateDetail">
+    <Position X="0.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Attributes\CoordinateDetail.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAEAFAJAAADABEIAAgCgAQAAAIAUAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicAttributes.Attributes.ButtonDetail">
+    <Position X="3" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Attributes\ButtonDetail.cs</FileName>
+      <HashCode>AYAAAAAAAAAIAAAAAABACAABQAgAAAAAAAAgAQAAAgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicAttributes.Attributes.MeterDetail">
+    <Position X="4.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Attributes\MeterDetail.cs</FileName>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAABAQABAAUEEAAAAABIA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Enum Name="BasicAttributes.Justification" Collapsed="true">
