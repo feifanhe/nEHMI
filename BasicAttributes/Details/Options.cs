@@ -99,6 +99,9 @@ namespace BasicAttributes
 		private readonly Scope _Scope;
 		private readonly bool _BitOperable;
 
+		// Type mapping for reverse lookup
+		private static readonly Dictionary<string, MemoryType> instance = new Dictionary<string, MemoryType>();
+
 		// R P @ # L D K I O C S A
 		public static readonly MemoryType R = new MemoryType( "R", Scope.Conditional, true );
 		public static readonly MemoryType P = new MemoryType( "P", Scope.Conditional, true );
@@ -135,10 +138,9 @@ namespace BasicAttributes
 			}
 		}
 
-		private static readonly Dictionary<string, MemoryType> instance = new Dictionary<string, MemoryType>();
-
 		//TODO: problems here, type initialize failed
 		public static explicit operator MemoryType(string str) {
+			Console.WriteLine( "* START EXPLICIT TYPE CONVERSION *" );
 			MemoryType result;
 			if( instance.TryGetValue( str, out result ) )
 				return result;
