@@ -34,6 +34,7 @@ namespace FormTest
 			this.MpBtn = new System.Windows.Forms.Button();
 			this.MTBtn = new System.Windows.Forms.Button();
 			this.MeterBtn = new System.Windows.Forms.Button();
+			this.DpmBtn = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// propertyGrid
@@ -122,11 +123,23 @@ namespace FormTest
 			this.MeterBtn.UseVisualStyleBackColor = true;
 			this.MeterBtn.Click += new System.EventHandler( this.MeterBtn_Click );
 			// 
+			// DpmBtn
+			// 
+			this.DpmBtn.Anchor = ( (System.Windows.Forms.AnchorStyles)( ( System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left ) ) );
+			this.DpmBtn.Location = new System.Drawing.Point( 101, 288 );
+			this.DpmBtn.Name = "DpmBtn";
+			this.DpmBtn.Size = new System.Drawing.Size( 75, 23 );
+			this.DpmBtn.TabIndex = 8;
+			this.DpmBtn.Text = "DPM Prop";
+			this.DpmBtn.UseVisualStyleBackColor = true;
+			this.DpmBtn.Click += new System.EventHandler( this.DpmBtn_Click );
+			// 
 			// BaseForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF( 6F, 13F );
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size( 276, 377 );
+			this.Controls.Add( this.DpmBtn );
 			this.Controls.Add( this.MeterBtn );
 			this.Controls.Add( this.MTBtn );
 			this.Controls.Add( this.MpBtn );
@@ -151,6 +164,7 @@ namespace FormTest
 		private System.Windows.Forms.Button MpBtn;
 		private System.Windows.Forms.Button MTBtn;
 		private System.Windows.Forms.Button MeterBtn;
+		private System.Windows.Forms.Button DpmBtn;
 	}
 }
 

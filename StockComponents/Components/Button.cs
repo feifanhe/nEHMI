@@ -11,8 +11,6 @@ namespace StockComponents
 	//[PropertyTab(typeof(CustomPropertyTab), PropertyTabScope.Component)]
 	public class Button
 	{
-		private AttributesPacker packed = new AttributesPacker();
-
 		private Common _Common = new Common();
 		//[Browsable(false)]
 		public Common Common {
@@ -65,24 +63,6 @@ namespace StockComponents
 			}
 		}
 
-		//public AttributesPacker Properties {
-		//    get {
-		//        packed.Clear();
 
-		//        #region General Inclusion
-		//        packed.Add( _Common );
-		//        packed.Add( _Text );
-		//        packed.Add( _Image );
-		//        #endregion
-
-		//        #region Exceptional Removal
-		//        #endregion
-
-		//        return packed;
-		//    }
-		//    set {
-		//        packed = value;
-		//    }
-		//}
 	}
 }

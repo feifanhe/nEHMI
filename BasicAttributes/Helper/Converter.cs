@@ -1,10 +1,9 @@
 using System;
 using System.ComponentModel;
 using System.Reflection;
-
-using BasicAttributes.Details;
 using System.Globalization;
 
+using BasicAttributes.Details;
 using BasicAttributes.Attributes;
 
 namespace BasicAttributes.Helper
@@ -83,6 +82,23 @@ namespace BasicAttributes.Helper
 											CultureInfo culture,
 											object value) {
 			return (string)value == "Yes";
+		}
+	}
+
+	//TODO: Duplicate converter between Basic and Stock 
+	internal class ItemConverter : ExpandableObjectConverter
+	{
+		public override object ConvertTo(ITypeDescriptorContext context,
+											CultureInfo culture,
+											object value,
+											Type destType) {
+			//TODO: Not the best approach here
+			//if( destType == typeof( string ) && value is PWDActions )
+			//{
+			//    BasicAttributes.Attributes.SelectionPack.PWDActions item = (BasicAttributes.Attributes.SelectionPack.PWDActions)value;
+			//    return item.Common.Name;
+			//}
+			return base.ConvertTo( context, culture, value, destType );
 		}
 	}
 }

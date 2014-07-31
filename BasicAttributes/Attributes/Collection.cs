@@ -91,7 +91,10 @@ namespace BasicAttributes.Attributes
 		//    this.List.Add( Item );
 		//}
 		public void Add(string ItemName) {
-			this.List.Add( Activator.CreateInstance(_ContentType, new object[]{ ItemName}));
+			this.List.Add( Activator.CreateInstance( _ContentType, new object[] { ItemName } ) );
+		}
+		public void Add(int ItemValue) {
+			this.List.Add( Activator.CreateInstance( _ContentType, new object[] { ItemValue } ) );
 		}
 		public void Remove(object Item) {
 			this.List.Remove( Item );

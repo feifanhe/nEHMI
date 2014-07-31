@@ -23,6 +23,7 @@ namespace FormTest
 		private StockComponents.MultiPicture testMP = new StockComponents.MultiPicture();
 		private StockComponents.MultiText testMT = new StockComponents.MultiText();
 		private StockComponents.Meter testMeter = new StockComponents.Meter();
+		private StockComponents.DropdownMenu testDpm = new StockComponents.DropdownMenu();
 
 		public BaseForm( ) {
 			InitializeComponent();
@@ -38,6 +39,12 @@ namespace FormTest
 			testMT.Items.Add( "TEXT1 NAME" );
 			testMT.Items.Add( "TEXT2 NAME" );
 			testMT.Items.Remove( testMT.Items[ 0 ] );
+
+			testBtn.Actions.Selected.ActionsPWD.Add( "" );
+
+			testDpm.Items.Add( 5 );
+			testDpm.Items.Add( 2 );
+			testDpm.Items.Add( 0 );
 
 			//testMP.template.Add( new Picture( "PICTURE1" ) );
 			//testMP.template.Add( new Picture( "PICTURE2" ) );
@@ -81,6 +88,11 @@ namespace FormTest
 			Console.WriteLine( "* Showing METER properties *" );
 			propertyGrid.SelectedObject = testMeter;
 
+		}
+
+		private void DpmBtn_Click(object sender, EventArgs e) {
+			Console.WriteLine( "* Showing DROPDOWN-MENU properties *" );
+			propertyGrid.SelectedObject = testDpm;
 		}
 	}
 }
